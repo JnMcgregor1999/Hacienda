@@ -8,6 +8,11 @@ const routes: Routes = [
     data: { title: "Login" }
   },
   {
+    path: "register",
+    loadChildren: () => import('./auth/register/register.module').then((m) => m.RegisterModule),
+    data: { title: "Login" }
+  },
+  {
     path: "**",
     redirectTo: ""
   }
