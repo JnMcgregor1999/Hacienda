@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Utn.Hacienda.Backend.Common/1.0.0": {
+        "runtime": {
+          "Utn.Hacienda.Backend.Common.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Utn.Hacienda.Backend.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

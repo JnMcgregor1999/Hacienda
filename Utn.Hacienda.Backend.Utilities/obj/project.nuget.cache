@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "6cjJV+sMx/abIfxsMzuRCPMAUiOekKiKPVcoXc7j4gOH4Oi42qlAfRKsYGIjEvCzAJR/DT+rTCMvCTb3qe3AzQ==",
+  "success": true,
+  "projectFilePath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.Utilities\\Utn.Hacienda.Backend.Utilities.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Koko\\.nuget\\packages\\aspnetcore.http.extensions\\1.0.1\\aspnetcore.http.extensions.1.0.1.nupkg.sha512",
+    "C:\\Users\\Koko\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Koko\\.nuget\\packages\\restsharp\\108.0.1\\restsharp.108.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
