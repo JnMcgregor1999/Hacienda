@@ -1,0 +1,15 @@
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\obj\Debug\net6.0\Utn.Hacienda.Backend.Utilities.csproj.AssemblyReference.cache
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\obj\Debug\net6.0\Utn.Hacienda.Backend.Utilities.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\obj\Debug\net6.0\Utn.Hacienda.Backend.Utilities.AssemblyInfoInputs.cache
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\obj\Debug\net6.0\Utn.Hacienda.Backend.Utilities.AssemblyInfo.cs
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\obj\Debug\net6.0\Utn.Hacienda.Backend.Utilities.csproj.CoreCompileInputs.cache
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\bin\Debug\net6.0\Utn.Hacienda.Backend.Utilities.deps.json
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\bin\Debug\net6.0\Utn.Hacienda.Backend.Utilities.dll
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\bin\Debug\net6.0\Utn.Hacienda.Backend.Utilities.pdb
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\bin\Debug\net6.0\Utn.Hacienda.Backend.Common.dll
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\bin\Debug\net6.0\Utn.Hacienda.Backend.Common.pdb
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\obj\Debug\net6.0\Utn.Hacienda.Backend.Utilities.csproj.CopyComplete
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\obj\Debug\net6.0\Utn.Hacienda.Backend.Utilities.dll
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\obj\Debug\net6.0\refint\Utn.Hacienda.Backend.Utilities.dll
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\obj\Debug\net6.0\Utn.Hacienda.Backend.Utilities.pdb
+C:\Repository\Hacienda\Utn.Hacienda.Backend.Utilities\obj\Debug\net6.0\ref\Utn.Hacienda.Backend.Utilities.dll
