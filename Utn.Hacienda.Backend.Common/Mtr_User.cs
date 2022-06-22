@@ -12,6 +12,7 @@ namespace Utn.Hacienda.Backend.Common
             Modification_Date = Convert.ToDateTime("1900-01-01");
             User_Name = "";
             Password = "";
+            Active = false;
         }
         public Int64 Pk_Mtr_User { get; set; }
         public String Creation_User { get; set; }
@@ -20,5 +21,6 @@ namespace Utn.Hacienda.Backend.Common
         public DateTime Modification_Date { get; set; }
         public String User_Name { get; set; }
         public String Password { get; set; }
+        public Boolean Active { get; set; }
     }
 }

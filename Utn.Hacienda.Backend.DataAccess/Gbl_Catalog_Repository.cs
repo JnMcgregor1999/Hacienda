@@ -36,16 +36,16 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                     ("PA_GBL_CATALOG_GET",
                     param: new
                     {
-                        P_CON_PK_GBL_CATALOG = model.Pk_Gbl_Catalog,
-                        P_CON_CREATION_USER = model.Creation_User,
-                        P_CON_CREATION_DATE = model.Creation_Date,
-                        P_CON_MODIFICATION_USER = model.Modification_User,
-                        P_CON_MODIFICATION_DATE = model.Modification_Date,
-                        P_CON_FK_GBL_TYPE_CATALOG = model.Fk_Gbl_Type_Catalog,
-                        P_CON_FK_GBL_CATALOG = model.Fk_Gbl_Catalog,
-                        P_CON_NAME = model.Name,
-                        P_CON_DESCRIPTION = model.Description,
-                        P_CON_ACTIVE = model.Active,
+                        P_PK_GBL_CATALOG = model.Pk_Gbl_Catalog,
+                        P_CREATION_USER = model.Creation_User,
+                        P_CREATION_DATE = model.Creation_Date,
+                        P_MODIFICATION_USER = model.Modification_User,
+                        P_MODIFICATION_DATE = model.Modification_Date,
+                        P_FK_GBL_TYPE_CATALOG = model.Fk_Gbl_Type_Catalog,
+                        P_FK_GBL_CATALOG = model.Fk_Gbl_Catalog,
+                        P_NAME = model.Name,
+                        P_DESCRIPTION = model.Description,
+                        P_ACTIVE = model.Active,
                     },
                     commandType: CommandType.StoredProcedure);
                 return await Task.FromResult<IEnumerable<Gbl_Catalog>>(result.ToList());

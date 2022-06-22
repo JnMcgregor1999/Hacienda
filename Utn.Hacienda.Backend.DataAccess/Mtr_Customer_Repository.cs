@@ -36,22 +36,23 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                     ("PA_MTR_CUSTOMER_GET",
                     param: new
                     {
-                        P_CON_PK_MTR_CUSTOMER = model.Pk_Mtr_Customer,
-                        P_CON_CREATION_USER = model.Creation_User,
-                        P_CON_CREATION_DATE = model.Creation_Date,
-                        P_CON_MODIFICATION_USER = model.Modification_User,
-                        P_CON_MODIFICATION_DATE = model.Modification_Date,
-                        P_CON_COMPANY_NAME = model.Company_Name,
-                        P_CON_IDENTIFICATION_TYPE = model.Identification_Type,
-                        P_CON_IDENTIFICATION = model.Identification,
-                        P_CON_SOCIAL_REAZON = model.Social_Reazon,
-                        P_CON_COMMERCIAL_NAME = model.Commercial_Name,
-                        P_CON_PROVINCE = model.Province,
-                        P_CON_CANTON = model.Canton,
-                        P_CON_DISTRICT = model.District,
-                        P_CON_EMAIL = model.Email,
-                        P_CON_TELEPHONE = model.Telephone,
-                        P_CON_ADDRESS = model.Address,
+                        P_PK_MTR_CUSTOMER = model.Pk_Mtr_Customer,
+                        P_CREATION_USER = model.Creation_User,
+                        P_CREATION_DATE = model.Creation_Date,
+                        P_MODIFICATION_USER = model.Modification_User,
+                        P_MODIFICATION_DATE = model.Modification_Date,
+                        P_COMPANY_NAME = model.Company_Name,
+                        P_IDENTIFICATION_TYPE = model.Identification_Type,
+                        P_IDENTIFICATION = model.Identification,
+                        P_SOCIAL_REAZON = model.Social_Reazon,
+                        P_COMMERCIAL_NAME = model.Commercial_Name,
+                        P_PROVINCE = model.Province,
+                        P_CANTON = model.Canton,
+                        P_DISTRICT = model.District,
+                        P_EMAIL = model.Email,
+                        P_TELEPHONE = model.Telephone,
+                        P_ADDRESS = model.Address,
+                        P_ACTIVE = model.Active
                     },
                     commandType: CommandType.StoredProcedure);
                 return await Task.FromResult<IEnumerable<Mtr_Customer>>(result.ToList());
@@ -82,6 +83,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_EMAIL = model.Email,
                         P_TELEPHONE = model.Telephone,
                         P_ADDRESS = model.Address,
+                        P_ACTIVE = model.Active
                     },
                     commandType: CommandType.StoredProcedure);
                 return await Task.FromResult<ICollection<Common.Mtr_Customer>>(result.ToList());
@@ -112,6 +114,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_EMAIL = model.Email,
                         P_TELEPHONE = model.Telephone,
                         P_ADDRESS = model.Address,
+                        P_ACTIVE = model.Active
                     },
                     commandType: CommandType.StoredProcedure).FirstOrDefault();
                 return await Task.FromResult<Common.Mtr_Customer>(result);
@@ -142,6 +145,8 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_EMAIL = model.Email,
                         P_TELEPHONE = model.Telephone,
                         P_ADDRESS = model.Address,
+                        P_ACTIVE = model.Active
+
                     },
                     commandType: CommandType.StoredProcedure);
             }

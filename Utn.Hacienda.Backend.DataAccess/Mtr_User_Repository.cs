@@ -36,13 +36,14 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                     ("PA_MTR_USER_GET",
                     param: new
                     {
-                        P_CON_PK_MTR_USER = model.Pk_Mtr_User,
-                        P_CON_CREATION_USER = model.Creation_User,
-                        P_CON_CREATION_DATE = model.Creation_Date,
-                        P_CON_MODIFICATION_USER = model.Modification_User,
-                        P_CON_MODIFICATION_DATE = model.Modification_Date,
-                        P_CON_USER_NAME = model.User_Name,
-                        P_CON_PASSWORD = model.Password,
+                        P_PK_MTR_USER = model.Pk_Mtr_User,
+                        P_CREATION_USER = model.Creation_User,
+                        P_CREATION_DATE = model.Creation_Date,
+                        P_MODIFICATION_USER = model.Modification_User,
+                        P_MODIFICATION_DATE = model.Modification_Date,
+                        P_USER_NAME = model.User_Name,
+                        P_PASSWORD = model.Password,
+                        P_ACTIVE = model.Active
                     },
                     commandType: CommandType.StoredProcedure);
                 return await Task.FromResult<IEnumerable<Mtr_User>>(result.ToList());
@@ -64,6 +65,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_MODIFICATION_DATE = model.Modification_Date,
                         P_USER_NAME = model.User_Name,
                         P_PASSWORD = model.Password,
+                        P_ACTIVE = model.Active
                     },
                     commandType: CommandType.StoredProcedure);
                 return await Task.FromResult<ICollection<Common.Mtr_User>>(result.ToList());
@@ -85,6 +87,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_MODIFICATION_DATE = model.Modification_Date,
                         P_USER_NAME = model.User_Name,
                         P_PASSWORD = model.Password,
+                        P_ACTIVE = model.Active
                     },
                     commandType: CommandType.StoredProcedure).FirstOrDefault();
                 return await Task.FromResult<Common.Mtr_User>(result);
@@ -106,6 +109,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_MODIFICATION_DATE = model.Modification_Date,
                         P_USER_NAME = model.User_Name,
                         P_PASSWORD = model.Password,
+                        P_ACTIVE = model.Active
                     },
                     commandType: CommandType.StoredProcedure);
             }
