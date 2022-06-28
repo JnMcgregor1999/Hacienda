@@ -33,7 +33,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
             {
                 var result = connection.Query<
                     Common.Gbl_Type_Catalog>
-                    ("PA_GBL_TYPE_CATALOG_GET",
+                    ("PA_CON_GBL_TYPE_CATALOG_GET",
                     param: new
                     {
                         P_PK_GBL_TYPE_CATALOG = model.Pk_Gbl_Type_Catalog,
@@ -41,6 +41,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_CREATION_DATE = model.Creation_Date,
                         P_MODIFICATION_USER = model.Modification_User,
                         P_MODIFICATION_DATE = model.Modification_Date,
+                        P_SEARCH_KEY = model.Search_Key,
                         P_NAME = model.Name,
                         P_DESCRIPTION = model.Description,
                         P_ACTIVE = model.Active,
@@ -63,6 +64,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_CREATION_DATE = model.Creation_Date,
                         P_MODIFICATION_USER = model.Modification_User,
                         P_MODIFICATION_DATE = model.Modification_Date,
+                        P_SEARCH_KEY = model.Search_Key,
                         P_NAME = model.Name,
                         P_DESCRIPTION = model.Description,
                         P_ACTIVE = model.Active,
@@ -85,6 +87,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_CREATION_DATE = model.Creation_Date,
                         P_MODIFICATION_USER = model.Modification_User,
                         P_MODIFICATION_DATE = model.Modification_Date,
+                        P_SEARCH_KEY = model.Search_Key,
                         P_NAME = model.Name,
                         P_DESCRIPTION = model.Description,
                         P_ACTIVE = model.Active,
@@ -107,6 +110,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_CREATION_DATE = model.Creation_Date,
                         P_MODIFICATION_USER = model.Modification_User,
                         P_MODIFICATION_DATE = model.Modification_Date,
+                        P_SEARCH_KEY = model.Search_Key,
                         P_NAME = model.Name,
                         P_DESCRIPTION = model.Description,
                         P_ACTIVE = model.Active,

@@ -46,14 +46,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                         return BadRequest(result.Result);
                     }
                     var list = result.DeSerializeObject<IEnumerable<Common.Mtr_User>>();
-                    var dataSuccess = new
-                    {
-                        Data = list,
-                        MessageResult = Backend.Common.Enum.Status.Success,
-                        Message = string.Empty,
-                        RegisterType = string.Empty
-                    };
-                    return Ok(dataSuccess);
+
+                    return Ok(list);
                 }
             }
             catch (Exception ex)
@@ -88,14 +82,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                         return BadRequest(result.Result);
                     }
                     var resultModel = result.DeSerializeObject<Common.Mtr_User>();
-                    var dataSuccess = new
-                    {
-                        Data = resultModel,
-                        MessageResult = Backend.Common.Enum.Status.Success,
-                        Message = string.Empty,
-                        RegisterType = string.Empty
-                    };
-                    return Ok(dataSuccess);
+
+                    return Ok(resultModel);
                 }
             }
             catch (Exception ex)
@@ -130,14 +118,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                         return BadRequest(result.Result);
                     }
                     var resultModel = result.DeSerializeObject<Common.Mtr_User>();
-                    var dataSuccess = new
-                    {
-                        Data = resultModel,
-                        MessageResult = Backend.Common.Enum.Status.Success,
-                        Message = string.Empty,
-                        RegisterType = string.Empty
-                    };
-                    return Ok(dataSuccess);
+
+                    return Ok(resultModel);
                 }
             }
             catch (Exception ex)

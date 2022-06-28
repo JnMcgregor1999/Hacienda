@@ -13,7 +13,7 @@
     <PackageReference Include="Azure.Storage.Blobs" Version="12.10.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Utn.Hacienda.Backend.BussinesLogic\Utn.Hacienda.Backend.BussinesLogic.csproj" />
+    <ProjectReference Include="..\Utn.Hacienda.Backend.BussinesLogic\Utn.Hacienda.Backend.BusinessLogic.csproj" />
     <ProjectReference Include="..\Utn.Hacienda.Backend.Common\Utn.Hacienda.Backend.Common.csproj" />
     <ProjectReference Include="..\Utn.Hacienda.Backend.Utilities\Utn.Hacienda.Backend.Utilities.csproj" />
   </ItemGroup>

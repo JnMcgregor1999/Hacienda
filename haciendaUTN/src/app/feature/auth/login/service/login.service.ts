@@ -13,7 +13,7 @@ const httpOptions = {
     headers: new HttpHeaders({ "Content-Type": "application/json" }),
 };
 
-const methodLogin = 'api/Mtr_User/Save'
+const methodLogin = 'api/Mtr_User/Get'
 
 @Injectable({
     providedIn: 'root'
@@ -29,7 +29,6 @@ export class LoginService {
        *******************************************************/
     login(data: any) {
         const url = environment.apiURL + methodLogin;
-        console.log(url);
         return this._http.post<any>(url, data, httpOptions).pipe(
             map((user: any) => {
                 utiles.createCacheObject("userData", user);

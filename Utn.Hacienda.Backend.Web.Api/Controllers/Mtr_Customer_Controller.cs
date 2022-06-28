@@ -11,10 +11,10 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
 {
     [Route("api/[controller]")]
     // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public class Mtr_Customer_Controller : Controller
+    public class Mtr_CustomerController : Controller
     {
         private IConfiguration configuration;
-        public Mtr_Customer_Controller(IConfiguration iConfiguration)
+        public Mtr_CustomerController(IConfiguration iConfiguration)
         {
             configuration = iConfiguration;
         }
@@ -27,6 +27,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
+        [Route("List")]
+        [HttpPost]
         public async Task<IActionResult> List([FromBody] Common.Mtr_Customer model)
         {
             try
@@ -44,14 +46,7 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                         return BadRequest(result.Result);
                     }
                     var list = result.DeSerializeObject<IEnumerable<Common.Mtr_Customer>>();
-                    var dataSuccess = new
-                    {
-                        Data = list,
-                        MessageResult = Backend.Common.Enum.Status.Success,
-                        Message = string.Empty,
-                        RegisterType = string.Empty
-                    };
-                    return Ok(dataSuccess);
+                    return Ok(list);
                 }
             }
             catch (Exception ex)
@@ -67,6 +62,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
+        [Route("Get")]
+        [HttpPost]
         public async Task<IActionResult> Get([FromBody] Common.Mtr_Customer model)
         {
             try
@@ -84,14 +81,7 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                         return BadRequest(result.Result);
                     }
                     var resultModel = result.DeSerializeObject<Common.Mtr_Customer>();
-                    var dataSuccess = new
-                    {
-                        Data = resultModel,
-                        MessageResult = Backend.Common.Enum.Status.Success,
-                        Message = string.Empty,
-                        RegisterType = string.Empty
-                    };
-                    return Ok(dataSuccess);
+                    return Ok(resultModel);
                 }
             }
             catch (Exception ex)
@@ -107,6 +97,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
+        [Route("Save")]
+        [HttpPost]
         public async Task<IActionResult> Save([FromBody] Common.Mtr_Customer model)
         {
             try
@@ -124,14 +116,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                         return BadRequest(result.Result);
                     }
                     var resultModel = result.DeSerializeObject<Common.Mtr_Customer>();
-                    var dataSuccess = new
-                    {
-                        Data = resultModel,
-                        MessageResult = Backend.Common.Enum.Status.Success,
-                        Message = string.Empty,
-                        RegisterType = string.Empty
-                    };
-                    return Ok(dataSuccess);
+
+                    return Ok(resultModel);
                 }
             }
             catch (Exception ex)

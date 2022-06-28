@@ -16,7 +16,7 @@
           "Microsoft.Owin": "4.2.0",
           "Microsoft.Owin.Cors": "4.2.0",
           "Microsoft.Owin.Security": "4.2.0",
-          "Utn.Hacienda.Backend.BussinesLogic": "1.0.0",
+          "Utn.Hacienda.Backend.BusinessLogic": "1.0.0",
           "Utn.Hacienda.Backend.Common": "1.0.0",
           "Utn.Hacienda.Backend.Utilities": "1.0.0"
         },
@@ -1375,7 +1375,7 @@
           "System.Xml.ReaderWriter": "4.3.0"
         }
       },
-      "Utn.Hacienda.Backend.BussinesLogic/1.0.0": {
+      "Utn.Hacienda.Backend.BusinessLogic/1.0.0": {
         "dependencies": {
           "DocumentFormat.OpenXml": "2.13.1",
           "Microsoft.AspNetCore.Antiforgery": "2.2.0",
@@ -1396,7 +1396,7 @@
           "Utn.Hacienda.Backend.Utilities": "1.0.0"
         },
         "runtime": {
-          "Utn.Hacienda.Backend.BussinesLogic.dll": {}
+          "Utn.Hacienda.Backend.BusinessLogic.dll": {}
         }
       },
       "Utn.Hacienda.Backend.Common/1.0.0": {
@@ -2499,7 +2499,7 @@
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
     },
-    "Utn.Hacienda.Backend.BussinesLogic/1.0.0": {
+    "Utn.Hacienda.Backend.BusinessLogic/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

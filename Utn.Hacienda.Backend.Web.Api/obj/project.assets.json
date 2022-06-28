@@ -2272,7 +2272,7 @@
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
       },
-      "Utn.Hacienda.Backend.BussinesLogic/1.0.0": {
+      "Utn.Hacienda.Backend.BusinessLogic/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
@@ -2295,10 +2295,10 @@
           "Utn.Hacienda.Backend.Utilities": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/Utn.Hacienda.Backend.BussinesLogic.dll": {}
+          "bin/placeholder/Utn.Hacienda.Backend.BusinessLogic.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Utn.Hacienda.Backend.BussinesLogic.dll": {}
+          "bin/placeholder/Utn.Hacienda.Backend.BusinessLogic.dll": {}
         }
       },
       "Utn.Hacienda.Backend.Common/1.0.0": {
@@ -7534,10 +7534,10 @@
         "system.xml.xdocument.nuspec"
       ]
     },
-    "Utn.Hacienda.Backend.BussinesLogic/1.0.0": {
+    "Utn.Hacienda.Backend.BusinessLogic/1.0.0": {
       "type": "project",
-      "path": "../Utn.Hacienda.Backend.BussinesLogic/Utn.Hacienda.Backend.BussinesLogic.csproj",
-      "msbuildProject": "../Utn.Hacienda.Backend.BussinesLogic/Utn.Hacienda.Backend.BussinesLogic.csproj"
+      "path": "../Utn.Hacienda.Backend.BussinesLogic/Utn.Hacienda.Backend.BusinessLogic.csproj",
+      "msbuildProject": "../Utn.Hacienda.Backend.BussinesLogic/Utn.Hacienda.Backend.BusinessLogic.csproj"
     },
     "Utn.Hacienda.Backend.Common/1.0.0": {
       "type": "project",
@@ -7565,7 +7565,7 @@
       "Microsoft.Owin >= 4.2.0",
       "Microsoft.Owin.Cors >= 4.2.0",
       "Microsoft.Owin.Security >= 4.2.0",
-      "Utn.Hacienda.Backend.BussinesLogic >= 1.0.0",
+      "Utn.Hacienda.Backend.BusinessLogic >= 1.0.0",
       "Utn.Hacienda.Backend.Common >= 1.0.0",
       "Utn.Hacienda.Backend.Utilities >= 1.0.0"
     ]
@@ -7604,8 +7604,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj": {
-              "projectPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj"
+            "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BusinessLogic.csproj": {
+              "projectPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BusinessLogic.csproj"
             },
             "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.Common\\Utn.Hacienda.Backend.Common.csproj": {
               "projectPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.Common\\Utn.Hacienda.Backend.Common.csproj"

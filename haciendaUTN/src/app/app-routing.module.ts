@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: "",
+    path: "login",
     loadChildren: () => import('./feature/auth/login/login.module').then((m) => m.LoginModule),
     data: { title: "Login" }
   },
@@ -18,13 +18,18 @@ const routes: Routes = [
     data: { title: "Register Company" }
   },
   {
+    path: "dashboard",
+    loadChildren: () => import('./feature/pages/dashboard/dashboard.module').then((m) => m.DashboardModule),
+    data: { title: "Dashboard" }
+  },
+  {
     path: "404",
     loadChildren: () => import('./feature/pages/notpagefound/notpagefound.module').then((m) => m.NotpagefoundModule),
     data: { title: "404" }
   },
   {
     path: "**",
-    redirectTo: ""
+    redirectTo: "login"
   }
 
 ];

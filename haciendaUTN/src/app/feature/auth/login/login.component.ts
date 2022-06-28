@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
             this._commonService._setLoading(false);// this line hidden the loading
             if (response) {
               this._router.navigate(
-                ['dasboard']
+                ['dashboard']
               );
             }
           },

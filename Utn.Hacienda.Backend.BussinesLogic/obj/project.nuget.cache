@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+L2v/DeWFZ6WeKb4uPj7jrzZMtijsUsH2MwRk9s5oI8gSZgFqc+7mJUb6GRycGehSa2wUGxei9RGN+o6OkymaQ==",
+  "dgSpecHash": "hswu0jjpPo80nJ3wBV7m6pRiBeqgvDlAq+ZWjPeBgQxzoxWShNiR3gHuiE+p5a2aLn+9AucLRYRXDfBy53IV/A==",
   "success": true,
-  "projectFilePath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj",
+  "projectFilePath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BusinessLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Koko\\.nuget\\packages\\aspnetcore.http.extensions\\1.0.1\\aspnetcore.http.extensions.1.0.1.nupkg.sha512",
     "C:\\Users\\Koko\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",

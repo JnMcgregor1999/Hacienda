@@ -11,10 +11,10 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
 {
     [Route("api/[controller]")]
     // [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public class Gbl_Type_Catalog_Controller : Controller
+    public class Gbl_Type_CatalogController : Controller
     {
         private IConfiguration configuration;
-        public Gbl_Type_Catalog_Controller(IConfiguration iConfiguration)
+        public Gbl_Type_CatalogController(IConfiguration iConfiguration)
         {
             configuration = iConfiguration;
         }
@@ -27,6 +27,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
+        [Route("List")]
+        [HttpPost]
         public async Task<IActionResult> List([FromBody] Common.Gbl_Type_Catalog model)
         {
             try
@@ -44,14 +46,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                         return BadRequest(result.Result);
                     }
                     var list = result.DeSerializeObject<IEnumerable<Common.Gbl_Type_Catalog>>();
-                    var dataSuccess = new
-                    {
-                        Data = list,
-                        MessageResult = Backend.Common.Enum.Status.Success,
-                        Message = string.Empty,
-                        RegisterType = string.Empty
-                    };
-                    return Ok(dataSuccess);
+
+                    return Ok(list);
                 }
             }
             catch (Exception ex)
@@ -67,6 +63,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
+        [Route("Get")]
+        [HttpPost]
         public async Task<IActionResult> Get([FromBody] Common.Gbl_Type_Catalog model)
         {
             try
@@ -84,14 +82,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                         return BadRequest(result.Result);
                     }
                     var resultModel = result.DeSerializeObject<Common.Gbl_Type_Catalog>();
-                    var dataSuccess = new
-                    {
-                        Data = resultModel,
-                        MessageResult = Backend.Common.Enum.Status.Success,
-                        Message = string.Empty,
-                        RegisterType = string.Empty
-                    };
-                    return Ok(dataSuccess);
+
+                    return Ok(resultModel);
                 }
             }
             catch (Exception ex)
@@ -107,6 +99,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>
+        [Route("Save")]
+        [HttpPost]
         public async Task<IActionResult> Save([FromBody] Common.Gbl_Type_Catalog model)
         {
             try
@@ -124,14 +118,8 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                         return BadRequest(result.Result);
                     }
                     var resultModel = result.DeSerializeObject<Common.Gbl_Type_Catalog>();
-                    var dataSuccess = new
-                    {
-                        Data = resultModel,
-                        MessageResult = Backend.Common.Enum.Status.Success,
-                        Message = string.Empty,
-                        RegisterType = string.Empty
-                    };
-                    return Ok(dataSuccess);
+
+                    return Ok(resultModel);
                 }
             }
             catch (Exception ex)

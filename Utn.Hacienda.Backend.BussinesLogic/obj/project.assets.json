@@ -3473,9 +3473,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj",
-      "projectName": "Utn.Hacienda.Backend.BussinesLogic",
-      "projectPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj",
+      "projectUniqueName": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BusinessLogic.csproj",
+      "projectName": "Utn.Hacienda.Backend.BusinessLogic",
+      "projectPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BusinessLogic.csproj",
       "packagesPath": "C:\\Users\\Koko\\.nuget\\packages\\",
       "outputPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\obj\\",
       "projectStyle": "PackageReference",

@@ -6,6 +6,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 
+// angular material
+import { MatSelectModule } from '@angular/material/select';
+
 // npm i
 import { NgxLoadingModule } from "ngx-loading";
 
@@ -20,9 +23,10 @@ import { LoadingModule } from './loading/loading.module';
         FormsModule,
         ReactiveFormsModule,
         NgxLoadingModule,
-        LoadingModule
+        LoadingModule,
+        MatSelectModule,
     ],
-    exports: [CommonModule, RouterModule],
+    exports: [CommonModule, RouterModule, MatSelectModule],
     declarations: [
 
     ]

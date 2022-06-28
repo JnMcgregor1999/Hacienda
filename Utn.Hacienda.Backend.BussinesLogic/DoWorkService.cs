@@ -1,13 +1,9 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Runtime;
 using System.Runtime.Loader;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyModel;
-using Utn.Hacienda.Backend.DataAccess;
 namespace Utn.Hacienda.Backend.BusinessLogic
 {
     public class DoWorkService : IDisposable
@@ -15,7 +11,6 @@ namespace Utn.Hacienda.Backend.BusinessLogic
         #region Region [Variables]
         private bool disposed;
       
-        IBusinessLogic businesslogic;
         #endregion
 
         #region Region [Metodos]

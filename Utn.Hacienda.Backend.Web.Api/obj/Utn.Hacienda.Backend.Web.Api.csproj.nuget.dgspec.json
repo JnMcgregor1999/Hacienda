@@ -4,12 +4,12 @@
     "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.Web.Api\\Utn.Hacienda.Backend.Web.Api.csproj": {}
   },
   "projects": {
-    "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj": {
+    "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BusinessLogic.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj",
-        "projectName": "Utn.Hacienda.Backend.BussinesLogic",
-        "projectPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj",
+        "projectUniqueName": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BusinessLogic.csproj",
+        "projectName": "Utn.Hacienda.Backend.BusinessLogic",
+        "projectPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BusinessLogic.csproj",
         "packagesPath": "C:\\Users\\Koko\\.nuget\\packages\\",
         "outputPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\obj\\",
         "projectStyle": "PackageReference",
@@ -376,8 +376,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj": {
-                "projectPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj"
+              "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BusinessLogic.csproj": {
+                "projectPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BusinessLogic.csproj"
               },
               "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.Common\\Utn.Hacienda.Backend.Common.csproj": {
                 "projectPath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.Common\\Utn.Hacienda.Backend.Common.csproj"
