@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "NrrzH1D0R70vB1q3oiM4OgGmFlImW1T1Mm/H+TFCKNYLj9nUxggxvmVeG0oGIxuLdiq4YFBsByiUJl0GorfflQ==",
+  "dgSpecHash": "+L2v/DeWFZ6WeKb4uPj7jrzZMtijsUsH2MwRk9s5oI8gSZgFqc+7mJUb6GRycGehSa2wUGxei9RGN+o6OkymaQ==",
   "success": true,
   "projectFilePath": "C:\\Repository\\Hacienda\\Utn.Hacienda.Backend.BussinesLogic\\Utn.Hacienda.Backend.BussinesLogic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Koko\\.nuget\\packages\\aspnetcore.http.extensions\\1.0.1\\aspnetcore.http.extensions.1.0.1.nupkg.sha512",
     "C:\\Users\\Koko\\.nuget\\packages\\azure.core\\1.6.0\\azure.core.1.6.0.nupkg.sha512",
     "C:\\Users\\Koko\\.nuget\\packages\\azure.identity\\1.3.0\\azure.identity.1.3.0.nupkg.sha512",
-    "C:\\Users\\Koko\\.nuget\\packages\\dapper\\2.0.123\\dapper.2.0.123.nupkg.sha512",
+    "C:\\Users\\Koko\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Koko\\.nuget\\packages\\documentformat.openxml\\2.13.1\\documentformat.openxml.2.13.1.nupkg.sha512",
     "C:\\Users\\Koko\\.nuget\\packages\\epplus\\4.1.0\\epplus.4.1.0.nupkg.sha512",
     "C:\\Users\\Koko\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",

@@ -240,7 +240,7 @@
           "dependencies": {
             "Dapper": {
               "target": "Package",
-              "version": "[2.0.123, )"
+              "version": "[2.0.90, )"
             },
             "Microsoft.Data.SqlClient": {
               "target": "Package",
@@ -398,9 +398,37 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
-            "Swashbuckle.AspNetCore": {
+            "Azure.Storage.Blobs": {
               "target": "Package",
-              "version": "[6.2.3, )"
+              "version": "[12.10.0, )"
+            },
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.AspNet.WebApi.Core": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[6.0.0-rc.2.21480.10, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[6.0.0-rc.2.21480.5, )"
+            },
+            "Microsoft.Owin": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "Microsoft.Owin.Cors": {
+              "target": "Package",
+              "version": "[4.2.0, )"
+            },
+            "Microsoft.Owin.Security": {
+              "target": "Package",
+              "version": "[4.2.0, )"
             }
           },
           "imports": [
