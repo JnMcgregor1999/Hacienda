@@ -33,7 +33,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
             {
                 var result = connection.Query<
                     Common.Mtr_Customer>
-                    ("PA_MTR_CUSTOMER_GET",
+                    ("PA_CON_MTR_CUSTOMER_GET",
                     param: new
                     {
                         P_PK_MTR_CUSTOMER = model.Pk_Mtr_Customer,
@@ -52,7 +52,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_EMAIL = model.Email,
                         P_TELEPHONE = model.Telephone,
                         P_ADDRESS = model.Address,
-                        P_ACTIVE = model.Active
+                        P_ACTIVE = model.Active,
                     },
                     commandType: CommandType.StoredProcedure);
                 return await Task.FromResult<IEnumerable<Mtr_Customer>>(result.ToList());
@@ -83,7 +83,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_EMAIL = model.Email,
                         P_TELEPHONE = model.Telephone,
                         P_ADDRESS = model.Address,
-                        P_ACTIVE = model.Active
+                        P_ACTIVE = model.Active,
                     },
                     commandType: CommandType.StoredProcedure);
                 return await Task.FromResult<ICollection<Common.Mtr_Customer>>(result.ToList());
@@ -114,7 +114,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_EMAIL = model.Email,
                         P_TELEPHONE = model.Telephone,
                         P_ADDRESS = model.Address,
-                        P_ACTIVE = model.Active
+                        P_ACTIVE = model.Active,
                     },
                     commandType: CommandType.StoredProcedure).FirstOrDefault();
                 return await Task.FromResult<Common.Mtr_Customer>(result);
@@ -145,8 +145,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_EMAIL = model.Email,
                         P_TELEPHONE = model.Telephone,
                         P_ADDRESS = model.Address,
-                        P_ACTIVE = model.Active
-
+                        P_ACTIVE = model.Active,
                     },
                     commandType: CommandType.StoredProcedure);
             }

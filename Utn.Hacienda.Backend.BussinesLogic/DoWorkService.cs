@@ -4,14 +4,13 @@ using System.Reflection;
 using System.Runtime.Loader;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyModel;
-
 namespace Utn.Hacienda.Backend.BusinessLogic
 {
     public class DoWorkService : IDisposable
     {
         #region Region [Variables]
         private bool disposed;
-        IBusinessLogic businesslogic;
+      
         #endregion
 
         #region Region [Metodos]
@@ -19,13 +18,12 @@ namespace Utn.Hacienda.Backend.BusinessLogic
         {
             try
             {
+
                 var nameSpace = Assembly.GetExecutingAssembly().GetName().Name;
                 var CadenaObjeto = string.Format("{0}.{1}", nameSpace, message.BusinessLogic);
-                var asm = AssemblyLoadContext.Default.LoadFromAssemblyPath(Assembly.GetExecutingAssembly().Location);
-
+                var asm = AssemblyLoadContext.Default.LoadFromAssemblyPath( Assembly.GetExecutingAssembly().Location);
                 var type = asm.GetType(CadenaObjeto);
                 dynamic obj = Activator.CreateInstance(type);
-
                 return await obj.DoWork(message);
             }
             catch (Exception ex)
@@ -33,7 +31,7 @@ namespace Utn.Hacienda.Backend.BusinessLogic
                 return new Common.Message(new Exception(string.Format("Mensaje del sistema: {0}", ex.Message)));
             }
         }
-
+        #endregion
         public class AssemblyLoader : AssemblyLoadContext
         {
             // Not exactly sure about this
@@ -41,15 +39,12 @@ namespace Utn.Hacienda.Backend.BusinessLogic
             {
                 var deps = DependencyContext.Default;
                 var res = deps.CompileLibraries.Where(d => d.Name.Contains(assemblyName.Name)).ToList();
-
                 var assembly = Assembly.Load(new AssemblyName(res.First().Name));
                 return assembly;
             }
         }
-
-        #endregion
-
-        #region Region [Dispose]
+      
+         #region Region [Dispose]
         public void Dispose()
         {
             Dispose(true);
@@ -71,3 +66,4 @@ namespace Utn.Hacienda.Backend.BusinessLogic
         #endregion
     }
 }
+

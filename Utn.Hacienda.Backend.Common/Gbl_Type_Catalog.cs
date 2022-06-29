@@ -10,6 +10,7 @@ namespace Utn.Hacienda.Backend.Common
             Creation_Date = Convert.ToDateTime("1900-01-01");
             Modification_User = "";
             Modification_Date = Convert.ToDateTime("1900-01-01");
+            Search_Key = "";
             Name = "";
             Description = "";
             Active = false;
@@ -19,6 +20,7 @@ namespace Utn.Hacienda.Backend.Common
         public DateTime Creation_Date { get; set; }
         public String Modification_User { get; set; }
         public DateTime Modification_Date { get; set; }
+        public String Search_Key { get; set; }
         public String Name { get; set; }
         public String Description { get; set; }
         public Boolean Active { get; set; }

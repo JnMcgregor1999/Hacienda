@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utn.Hacienda.Backend.DataAc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utn.Hacienda.Backend.Common", "Utn.Hacienda.Backend.Common\Utn.Hacienda.Backend.Common.csproj", "{C50F443D-6009-4167-9E36-73BC1DBB6875}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utn.Hacienda.Backend.BussinesLogic", "Utn.Hacienda.Backend.BussinesLogic\Utn.Hacienda.Backend.BussinesLogic.csproj", "{606E7E7F-C2F8-4E77-9070-3A2023DEF1F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Utn.Hacienda.Backend.BusinessLogic", "Utn.Hacienda.Backend.BussinesLogic\Utn.Hacienda.Backend.BusinessLogic.csproj", "{606E7E7F-C2F8-4E77-9070-3A2023DEF1F4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

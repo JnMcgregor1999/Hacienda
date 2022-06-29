@@ -33,7 +33,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
             {
                 var result = connection.Query<
                     Common.Gbl_Catalog>
-                    ("PA_GBL_CATALOG_GET",
+                    ("PA_CON_GBL_CATALOG_GET",
                     param: new
                     {
                         P_PK_GBL_CATALOG = model.Pk_Gbl_Catalog,
@@ -43,6 +43,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_MODIFICATION_DATE = model.Modification_Date,
                         P_FK_GBL_TYPE_CATALOG = model.Fk_Gbl_Type_Catalog,
                         P_FK_GBL_CATALOG = model.Fk_Gbl_Catalog,
+                        P_SEARCH_KEY = model.Search_Key,
                         P_NAME = model.Name,
                         P_DESCRIPTION = model.Description,
                         P_ACTIVE = model.Active,
@@ -67,6 +68,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_MODIFICATION_DATE = model.Modification_Date,
                         P_FK_GBL_TYPE_CATALOG = model.Fk_Gbl_Type_Catalog,
                         P_FK_GBL_CATALOG = model.Fk_Gbl_Catalog,
+                        P_SEARCH_KEY = model.Search_Key,
                         P_NAME = model.Name,
                         P_DESCRIPTION = model.Description,
                         P_ACTIVE = model.Active,
@@ -91,6 +93,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_MODIFICATION_DATE = model.Modification_Date,
                         P_FK_GBL_TYPE_CATALOG = model.Fk_Gbl_Type_Catalog,
                         P_FK_GBL_CATALOG = model.Fk_Gbl_Catalog,
+                        P_SEARCH_KEY = model.Search_Key,
                         P_NAME = model.Name,
                         P_DESCRIPTION = model.Description,
                         P_ACTIVE = model.Active,
@@ -115,6 +118,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_MODIFICATION_DATE = model.Modification_Date,
                         P_FK_GBL_TYPE_CATALOG = model.Fk_Gbl_Type_Catalog,
                         P_FK_GBL_CATALOG = model.Fk_Gbl_Catalog,
+                        P_SEARCH_KEY = model.Search_Key,
                         P_NAME = model.Name,
                         P_DESCRIPTION = model.Description,
                         P_ACTIVE = model.Active,
