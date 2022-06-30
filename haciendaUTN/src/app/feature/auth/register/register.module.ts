@@ -1,16 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RegisterComponent } from './register.component';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { MatSelectModule } from '@angular/material/select';
+
+import { RegisterComponent } from './register.component';
 
 const routes: Routes = [{ path: '', component: RegisterComponent }]
 
 @NgModule({
-  declarations: [ RegisterComponent ],
+  declarations: [RegisterComponent],
   imports: [
     RouterModule.forChild(routes),
-    CommonModule
-  ]
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSelectModule
+  ],
+  exports: [MatSelectModule]
 })
 export class RegisterModule { }
