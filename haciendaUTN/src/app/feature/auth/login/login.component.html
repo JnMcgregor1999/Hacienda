@@ -24,25 +24,33 @@
                 </ul>
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
-                        <br><br>
+                        <br>
                         <h3>Bienvenido al portal de Trámite Virtual</h3>
-                        <hr>
+                        <h5 style="color:#032e6c">Inicio de sesión</h5>
+                        <br>
                         <form [formGroup]="loginForm" novalidate>
-                            <div class="form-outline mb-4">
-                                <label for="inputPassword4" class="form-label">Nº identificación:</label>
-                                <input formControlName="username" type="text" class="form-control" id="inputPassword4"
-                                    placeholder="0-0000-0000" required>
-                            </div>
-                            <div class="form-outline mb-4">
-                                <label class="form-label">Contraseña:</label>
-                                <input formControlName="password" type="password" class="form-control"
-                                    placeholder="Contraseña" required>
-                            </div>
-                            <br>
-                            <button (click)="login()" class="btn btn-primary btn-block mb-4">Iniciar</button>
-                            <div class="text-center">
-                                <p>No estas registrado? <a [routerLink]="['/register']">registro</a></p>
-                            </div>
+                            
+                                <div class="row mb-3">
+                                    <div class="form-outline mb-4">
+                                        <label for="inputPassword4" class="form-label">Nº identificación:</label>
+                                        <input formControlName="username" type="text" class="form-control" id="inputPassword4"
+                                            placeholder="0-0000-0000" required>
+                                    </div>
+                                    <div class="form-outline mb-4">
+                                        <label class="form-label">Contraseña:</label>
+                                        <input formControlName="password" type="password" class="form-control"
+                                            placeholder="Contraseña" required>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row-md-6">
+                                    <button (click)="login()" class="btn btn-primary btn-block mb-4">Iniciar</button>
+                                    <br>
+                                    <div class="text-center">
+                                        <p>No estas registrado? <a [routerLink]="['/register']">registro</a></p>
+                                    </div>
+                                </div>
+                               
                         </form>
                     </div>
                 </div>
