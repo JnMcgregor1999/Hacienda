@@ -3,83 +3,87 @@
 * Creation date: 06/28/2022
 * Description: Creation and design of the register clients screen.
 *******************************************************/ -->
-<body  style="background-color: #a4d3eb;">   
-    <div class="container">
+<body  class="m-0 vh-100 row justify-content-center align-items-center" style="background-color: #a4d3eb;">   
+    <div class="container col-auto  p-5 text-center" >
         <br>
-        <div class="card text-center" style="width: 100%; height: 100%;">
-            <div class="card-body" >
+        <div class="card text-center" style="width: 100%; height: 100%; z-index: 1050">
+            <div class="card-body ">
                  <a [routerLink]="['login']"><p style="text-align: right;">Cerrar sessión</p></a> 
                 <img src="../../../assets/img/logo.jpeg" alt="logo"/>  
                 <br><br>
-                        <h3>Registro de clientes</h3>
-                        <hr>
-                        <form class="row g-4" style="margin-left: 10px; margin-right: 10px;">
-                                <div class="col-md-6">
-                                    <label for="text" class="form-label">Nombre de la compañia</label>
-                                    <input type="text" class="form-control" placeholder="Nombre de la compañia" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="inputPassword4" class="form-label">Nombre comercial:</label>
-                                    <input type="text" class="form-control" id="inputPassword4" placeholder="Nombre comercial"required>
-                                </div>
-                                <div class="col-md-6"> 
-                                    <label for="inputPassword4" class="form-label">Tipo de identificación:</label>
-                                    <select class="form-select" aria-label="Default select example" required>
-                                        <option selected>Nacional</option>
-                                        <option value="1">Extranjero</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="number" class="form-label">Nº identificación:</label>
-                                    <input type="number" class="form-control" placeholder="0-0000-0000" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="text" class="form-label">Razón social</label>
-                                    <input type="text" class="form-control" placeholder="Razón social" required>
-                                </div>
-                                
-                                <div class="col-md-6"> 
-                                    <label for="inputPassword4" class="form-label">Provincia</label>
-                                    <select class="form-select" aria-label="Default select example" required>
-                                        <option selected>San jose</option>
-                                        <option value="2">Alajuela</option>
-                                        <option value="3">Heredia</option>
-                                        <option value="3">Cartago</option>
-                                        <option value="5">Guanacaste</option>
-                                        <option value="6">Puntarenas</option>
-                                        <option value="7">Limón</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="text" class="form-label">Cantón</label>
-                                    <input type="text" class="form-control" placeholder="Cantón" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="text" class="form-label">Distrito</label>
-                                    <input type="text" class="form-control" placeholder="Distrito" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="email" class="form-label">Correo electronico:</label>
-                                    <input type="email" class="form-control" id="inputPassword4" placeholder="prueba@gmail.com"required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="text" class="form-label">Telefono</label>
-                                    <input type="number" class="form-control" placeholder="Telefono" required>
-                                </div><div class="col-md-6">
-                                    <label for="text" class="form-label">Dirreción</label>
-                                    <input type="text" class="form-control" placeholder="Dirección" required>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="text" class="form-label">Dirreción extranjera</label>
-                                    <input type="text" class="form-control" placeholder="Dirección extranjera" required>
-                                </div>
-                            <br>
-                            <button type="submit" class="btn btn-primary btn-block md-2">Registrar</button>
-                            <br><br>
-                        </form>
+                <h3>Registro de clientes</h3>
+                <hr>
+                <form>
+                    <div class="row mb-3" >
+                        <div class="col-md-6">
+                            <label for="text" class="form-label">Nombre de la compañia</label>
+                             <input type="text" class="form-control" placeholder="Nombre de la compañia" required>
+                        </div>
+                        <div class="col-md-6">
+                             <label for="inputPassword4" class="form-label">Nombre comercial:</label>
+                            <input type="text" class="form-control" id="inputPassword4" placeholder="Nombre comercial"required>
+                        </div>
+                        <div class="col-md-6"> 
+                            <label for="inputPassword4" class="form-label">Tipo de identificación:</label>
+                            <select class="form-select" aria-label="Default select example" required>
+                                <option selected>Nacional</option>
+                                <option value="1">Extranjero</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="number" class="form-label">Nº identificación:</label>
+                            <input type="number" class="form-control" placeholder="0-0000-0000" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="text" class="form-label">Razón social</label>
+                            <input type="text" class="form-control" placeholder="Razón social" required>
+                        </div>   
+                        <div class="col-md-6"> 
+                            <label for="inputPassword4" class="form-label">Provincia</label>
+                                <select class="form-select" aria-label="Default select example" required>
+                                    <option selected>San jose</option>
+                                    <option value="2">Alajuela</option>
+                                    <option value="3">Heredia</option>
+                                    <option value="3">Cartago</option>
+                                    <option value="5">Guanacaste</option>
+                                    <option value="6">Puntarenas</option>
+                                    <option value="7">Limón</option>
+                                </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="text" class="form-label">Cantón</label>
+                            <input type="text" class="form-control" placeholder="Cantón" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="text" class="form-label">Distrito</label>
+                            <input type="text" class="form-control" placeholder="Distrito" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Correo electronico:</label>
+                            <input type="email" class="form-control" id="inputPassword4" placeholder="prueba@gmail.com"required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="text" class="form-label">Telefono</label>
+                            <input type="number" class="form-control" placeholder="Telefono" required>
+                        </div><div class="col-md-6">
+                            <label for="text" class="form-label">Dirreción</label>
+                            <input type="text" class="form-control" placeholder="Dirección" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="text" class="form-label">Dirreción extranjera</label>
+                            <input type="text" class="form-control" placeholder="Dirección extranjera" required>
+                        </div>
                     </div>
+                    <br>
+                    <button  class="btn btn-primary btn-block mb-4">Registrarse</button>
+                </form>  
             </div>
-            <br>
         </div>
-  
+    </div>
+        <section>
+            <div class="wave wave1"></div>
+            <div class="wave wave2"></div>
+            <div class="wave wave3"></div>
+            <div class="wave wave4"></div>
+        </section>
 </body>
