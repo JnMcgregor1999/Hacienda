@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
    * Creation date: 19/06/2022
    * Description: Variable that contains all subscriptions
    *******************************************************/
-  private unsubscribe$ = new Subject<void>();
+  private _unsubscribe$ = new Subject<void>();
 
   /******************************************************
    * Author: Johan McGregor
@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
    *******************************************************/
   public loginForm: FormGroup = this.form.group({
     password: ["", Validators.compose([Validators.required])],
-    username: ["", Validators.compose([Validators.required])],
+    identification: ["", Validators.compose([Validators.required])],
   });
 
   /******************************************************
@@ -53,20 +53,28 @@ export class LoginComponent implements OnInit {
    * Description: Method that makes login
    *******************************************************/
   login() {
+    debugger;
     if (this.loginForm.invalid) {
+      debugger;
       this.submitted = true;
     } else {
+      debugger;
       this._commonService._setLoading(true); // this line call/show the loading
       let model: LoginModel = {
-        userName: this.loginForm.get("username")?.value,
-        password: this.loginForm.get("password")?.value,
-        isLogin: false
+        Identification: this.loginForm.get("identification")?.value,
+        Password: this.loginForm.get("password")?.value,
+        Fk_Catalog_Identification_Type: 0,
+        Full_Name: '',
+        Email: '',
+        Active: true
       }
+      debugger;
       this._loginService
         .login(model)
-        .pipe(takeUntil(this.unsubscribe$))
+        .pipe(takeUntil(this._unsubscribe$))
         .subscribe({
           next: (response: any) => {
+            debugger;
             this._commonService._setLoading(false);// this line hidden the loading
             if (response) {
               this._router.navigate(
@@ -74,7 +82,7 @@ export class LoginComponent implements OnInit {
               );
             }
           },
-          error: (response: any) => { this._commonService._setLoading(false); console.log(`e => ${response}`) },
+          error: (response: any) => { debugger; this._commonService._setLoading(false); console.log(`e => ${response}`) },
           complete: () => {
             this._commonService._setLoading(false);
           }
@@ -89,8 +97,8 @@ export class LoginComponent implements OnInit {
    * Description: Method that cancels subscriptions
    *******************************************************/
   ngOnDestroy() {
-    this.unsubscribe$.next();
-    this.unsubscribe$.complete();
+    this._unsubscribe$.next();
+    this._unsubscribe$.complete();
   }
 
 }

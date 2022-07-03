@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from "@angular/core";
+import { LoginModel } from "@core/model/login.model";
 import { environment } from "@env/environment";
 import { utiles } from "@util/utiles";
 import { map } from "rxjs";
@@ -27,7 +28,7 @@ export class LoginService {
        * Creation date: 19/06/2022
        * Description: Method that makes login
        *******************************************************/
-    login(data: any) {
+    login(data: LoginModel) {
         const url = environment.apiURL + methodLogin;
         return this._http.post<any>(url, data, httpOptions).pipe(
             map((user: any) => {

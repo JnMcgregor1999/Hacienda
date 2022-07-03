@@ -82,7 +82,7 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
             using (var connection = new SqlConnection(ConnectionString))
             {
                 var result = connection.Query<
-                    Utn.Hacienda.Backend.Common.Mtr_User>
+                   Mtr_User>
                     ("PA_CON_MTR_USER_GET",
                     param: new
                     {

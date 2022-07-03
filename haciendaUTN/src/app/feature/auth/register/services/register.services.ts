@@ -20,7 +20,7 @@ const methodSave= 'api/Mtr_User/Save'
 @Injectable({
     providedIn: 'root'
 })
-export class LoginService {
+export class RegisterService {
 
     constructor(private _http: HttpClient) { }
 

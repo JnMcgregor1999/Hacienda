@@ -27,13 +27,6 @@
                 <hr>
                 <form [formGroup]="registerForm" novalidate>
                     <div class="form-outline mb-4">
-                    <!-- <mat-select formControlName="fk_Catalog_Identification_Type"
-                                [ngModelOptions]="{standalone: true}" class="form-control text-center">
-                                <mat-option *ngFor="let identification of identification_type"
-                                    [value]="identification.pk_Glb_Cat_Catalog">
-                                    {{identification.name}}
-                                </mat-option>
-                            </mat-select> -->
                         <div class="col-sm-12">
                                 <label for="inputPassword4" class="form-label">Nombre completo:</label>
                                 <input formControlName="full_Name" type="text" class="form-control" id="inputPassword4"
@@ -48,7 +41,7 @@
                         </div>
                         <div class="col-sm-6">
                             <label for="inputPassword4" class="form-label">Tipo de identificación:</label>
-                            <select formControlName="fk_Catalog_Identification_Type" class="form-select"
+                            <select [(ngModel)]="identificationTypeSelected" formControlName="fk_Catalog_Identification_Type" class="form-select"
                                 aria-label="Default select example" required>
                                 <option *ngFor="let identification of identification_type"
                                     [value]="identification.pk_Glb_Cat_Catalog"> {{identification.name}}</option>
@@ -68,12 +61,12 @@
                         
                     <div class="col-sm-6">
                         <label class="form-label">Contraseña:</label>
-                                    <input formControlName="password" type="text" class="form-control"
+                                    <input formControlName="password" type="password" class="form-control"
                                         placeholder="Contraseña" required>
                     </div>
                     <div class="col-sm-6">
                         <label class="form-label">Confirmar contraseña:</label>
-                                    <input formControlName="confirm_Password" type="text" class="form-control"
+                                    <input formControlName="confirm_Password" type="password" class="form-control"
                                         placeholder="Confirmar contraseña" required>
                     </div>
                     </div>

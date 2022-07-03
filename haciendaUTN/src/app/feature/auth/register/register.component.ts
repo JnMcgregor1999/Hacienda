@@ -6,6 +6,7 @@ import { Type_CatalogModel } from '@core/model/type_Catalog.module';
 import { CommonService } from '@shared/services/common.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from "rxjs/operators";
+import { RegisterService } from './services/register.services';
 
 @Component({
   selector: 'app-register',
@@ -42,7 +43,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
   *******************************************************/
   public submitted: boolean = false;
 
-
   /******************************************************
   * Author: Johan McGregor
   * Creation date: 27/06/2022
@@ -50,17 +50,23 @@ export class RegisterComponent implements OnInit, OnDestroy {
   *******************************************************/
   public identification_type: Array<any> = new Array();
 
+
+  public identificationTypeSelected: number = 0;
+
   constructor(private form: FormBuilder,
     private _router: Router,
-    private _commonService: CommonService,) { }
+    private _commonService: CommonService,
+    private _registerService: RegisterService) { }
 
   ngOnInit(): void {
     this.getCatalogTypeIdentification();
   }
 
-
-
-
+  /******************************************************
+   * Author: Johan McGregor
+   * Creation date: 02/07/2022
+   * Description: Method that get type catalog of identification type
+   *******************************************************/
   getCatalogTypeIdentification() {
     this._commonService._setLoading(true);
     let model: Type_CatalogModel = {
@@ -81,8 +87,11 @@ export class RegisterComponent implements OnInit, OnDestroy {
       });
   }
 
-
-
+  /******************************************************
+   * Author: Johan McGregor
+   * Creation date: 02/07/2022
+   * Description: Method that get catalog of identification type
+   *******************************************************/
   listCatalogIdentification(pk_Gbl_Type_Catalog: number) {
     this._commonService._setLoading(true);
     let model = {
@@ -105,39 +114,40 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
 
-
+  /******************************************************
+     * Author: Johan McGregor
+     * Creation date: 02/07/2022
+     * Description: Method that save user information
+     *******************************************************/
   save() {
     if (this.registerForm.invalid) {
       this.submitted = true;
     } else {
       this._commonService._setLoading(true); // this line call/show the loading
       let model: RegisterModel = {
-        fk_Catalog_Identification_Type: this.registerForm.get("fk_Catalog_Identification_Type")?.value,
+        fk_Catalog_Identification_Type: 1,
         identification: this.registerForm.get("identification")?.value,
         full_Name: this.registerForm.get("full_Name")?.value,
         email: this.registerForm.get("email")?.value,
         password: this.registerForm.get("password")?.value,
         active: true
       }
-      console.log(model);
 
-      // this._loginService
-      //   .login(model)
-      //   .pipe(takeUntil(this.unsubscribe$))
-      //   .subscribe({
-      //     next: (response: any) => {
-      //       this._commonService._setLoading(false);// this line hidden the loading
-      //       if (response) {
-      //         this._router.navigate(
-      //           ['dashboard']
-      //         );
-      //       }
-      //     },
-      //     error: (response: any) => { this._commonService._setLoading(false); console.log(`e => ${response}`) },
-      //     complete: () => {
-      //       this._commonService._setLoading(false);
-      //     }
-      //   });
+      this._registerService
+        .save(model)
+        .pipe(takeUntil(this.unsubscribe$))
+        .subscribe({
+          next: (response: any) => {
+            this._commonService._setLoading(false);// this line hidden the loading
+            this._router.navigate(
+              ['login']
+            );
+          },
+          error: (response: any) => { this._commonService._setLoading(false); console.log(`e => ${response}`) },
+          complete: () => {
+            this._commonService._setLoading(false);
+          }
+        });
     }
   }
 

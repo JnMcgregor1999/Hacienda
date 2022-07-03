@@ -18,7 +18,6 @@ namespace Utn.Hacienda.Backend.BusinessLogic
         {
             try
             {
-
                 var nameSpace = Assembly.GetExecutingAssembly().GetName().Name;
                 var CadenaObjeto = string.Format("{0}.{1}", nameSpace, message.BusinessLogic);
                 var asm = AssemblyLoadContext.Default.LoadFromAssemblyPath( Assembly.GetExecutingAssembly().Location);

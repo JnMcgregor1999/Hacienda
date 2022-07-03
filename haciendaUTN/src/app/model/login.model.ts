@@ -5,13 +5,19 @@
 *********************************************************/
 
 export class LoginModel {
-    password: string;
-    userName: string;
-    isLogin: boolean;
+  Fk_Catalog_Identification_Type: number;
+  Identification: string;
+  Full_Name: string;
+  Email: string;
+  Password: string;
+  Active: boolean;
 
-    constructor() {
-        this.password = "";
-        this.userName = "";
-        this.isLogin = false;
-    }
+  constructor() {
+    this.Fk_Catalog_Identification_Type = 0;
+    this.Identification = "";
+    this.Full_Name = "";
+    this.Email = "";
+    this.Password = "";
+    this.Active = true;
+  }
 }
