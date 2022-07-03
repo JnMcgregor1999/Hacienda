@@ -53,12 +53,9 @@ export class LoginComponent implements OnInit {
    * Description: Method that makes login
    *******************************************************/
   login() {
-    debugger;
     if (this.loginForm.invalid) {
-      debugger;
       this.submitted = true;
     } else {
-      debugger;
       this._commonService._setLoading(true); // this line call/show the loading
       let model: LoginModel = {
         Identification: this.loginForm.get("identification")?.value,
@@ -68,13 +65,11 @@ export class LoginComponent implements OnInit {
         Email: '',
         Active: true
       }
-      debugger;
       this._loginService
         .login(model)
         .pipe(takeUntil(this._unsubscribe$))
         .subscribe({
           next: (response: any) => {
-            debugger;
             this._commonService._setLoading(false);// this line hidden the loading
             if (response) {
               this._router.navigate(

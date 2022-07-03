@@ -126,6 +126,33 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                     commandType: CommandType.StoredProcedure);
             }
         }
+
+
+        public async Task<Common.Mtr_User> SaveGet(Common.Mtr_User model)
+        {
+            using (var connection = new SqlConnection(ConnectionString))
+            {
+                var result = connection.Query<
+                   Mtr_User>
+                    ("PA_MAN_MTR_USER_SAVE",
+                    param: new
+                    {
+                        P_PK_MTR_USER = model.Pk_Mtr_User,
+                        P_CREATION_USER = model.Creation_User,
+                        P_CREATION_DATE = model.Creation_Date,
+                        P_MODIFICATION_USER = model.Modification_User,
+                        P_MODIFICATION_DATE = model.Modification_Date,
+                        P_FK_CATALOG_IDENTIFICATION_TYPE = model.Fk_Catalog_Identification_Type,
+                        P_IDENTIFICATION = model.Identification,
+                        P_FULL_NAME = model.Full_Name,
+                        P_EMAIL = model.Email,
+                        P_PASSWORD = model.Password,
+                        P_ACTIVE = model.Active,
+                    },
+                    commandType: CommandType.StoredProcedure).FirstOrDefault();
+                return await Task.FromResult<Common.Mtr_User>(result);
+            }
+        }
         public async Task Delete(Common.Mtr_User model)
         {
             using (var connection = new SqlConnection(ConnectionString))

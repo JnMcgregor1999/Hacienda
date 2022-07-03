@@ -38,11 +38,11 @@
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>La carniceria</td>
-                                    <td>02/07/2022</td>
-                                    <td>ver</td>
+                                  <tr *ngFor="let item of allInvoiceData">
+                                    <th scope="row">{{item.pk_Mtr_Invoice}}</th>
+                                    <td>{{item.reference_Number}}</td>
+                                    <td>{{item.creation_Date}}</td>
+                                    <td><a target="_blank" href="{{item.invoice_Url}}">ver</a></td>
                                   </tr>
                                 </tbody>
                               </table>   
