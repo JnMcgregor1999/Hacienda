@@ -6,6 +6,8 @@ import { Subject } from 'rxjs';
 import { LoginService } from './service/login.service';
 import { takeUntil } from "rxjs/operators";
 import { Router } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
+import { ModalErrorComponent } from '../../../shared/modal/modal-error/modal-error.component';
 
 @Component({
   selector: 'app-login',
@@ -42,7 +44,9 @@ export class LoginComponent implements OnInit {
     private form: FormBuilder,
     private _router: Router,
     private _commonService: CommonService,
-    private _loginService: LoginService) { }
+    private _loginService: LoginService,
+    public dialog: MatDialog) { }
+    
 
   ngOnInit(): void {
   }
@@ -56,7 +60,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       this.submitted = true;
     } else {
-      this._commonService._setLoading(true); // this line call/show the loading
+      // this._commonService._setLoading(true); // this line call/show the loading
       let model: LoginModel = {
         Identification: this.loginForm.get("identification")?.value,
         Password: this.loginForm.get("password")?.value,
@@ -77,13 +81,21 @@ export class LoginComponent implements OnInit {
               );
             }
           },
-          error: (response: any) => { debugger; this._commonService._setLoading(false); console.log(`e => ${response}`) },
+          error: (response: any) => { debugger; this._commonService._setLoading(false); console.log(`e => ${response}`);this.openDialog(response.message) },
           complete: () => {
             this._commonService._setLoading(false);
           }
         });
     }
   }
+
+  openDialog(messageError:string): void {
+    const dialogRef = this.dialog.open(ModalErrorComponent, {
+      width: '250px',
+      data: {message:messageError},
+    });
+  }
+
 
 
   /******************************************************

@@ -14,6 +14,7 @@ import { NgxLoadingModule } from "ngx-loading";
 
 // cunstoms modules
 import { LoadingModule } from './loading/loading.module';
+import { ModalErrorModule } from './modal/modal-error/modal-error.module';
 
 @NgModule({
     imports: [
@@ -25,11 +26,14 @@ import { LoadingModule } from './loading/loading.module';
         NgxLoadingModule,
         LoadingModule,
         MatSelectModule,
+        ModalErrorModule,
     ],
     exports: [CommonModule, RouterModule, MatSelectModule],
     declarations: [
 
-    ]
+    
+    
+  ]
 
 })
 export class SharedModule { }

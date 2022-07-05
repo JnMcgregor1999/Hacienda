@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadingModule } from './shared/loading/loading.module';
 import { SharedModule } from './shared/shared.module';
+import {MatDialogModule} from '@angular/material/dialog'
 
 @NgModule({
   declarations: [
@@ -16,11 +17,13 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     RouterModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
+   
 
     AppRoutingModule,
     SharedModule,
-    LoadingModule
+    LoadingModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
