@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "e/gRRh/0PTEz09C9X3UD3WcEqYYWLTNezSANggqU0s0=",
+  "Source": "Utn.Hacienda.Backend.Web.Api",
+  "BasePath": "_content/Utn.Hacienda.Backend.Web.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

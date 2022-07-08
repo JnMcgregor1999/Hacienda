@@ -1,0 +1,17 @@
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\bin\Release\net6.0\Utn.Hacienda.Backend.DataAccess.deps.json
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\bin\Release\net6.0\Utn.Hacienda.Backend.DataAccess.dll
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\bin\Release\net6.0\Utn.Hacienda.Backend.DataAccess.pdb
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\bin\Release\net6.0\Utn.Hacienda.Backend.Common.dll
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\bin\Release\net6.0\Utn.Hacienda.Backend.Utilities.dll
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\bin\Release\net6.0\Utn.Hacienda.Backend.Common.pdb
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\bin\Release\net6.0\Utn.Hacienda.Backend.Utilities.pdb
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\obj\Release\net6.0\Utn.Hacienda.Backend.DataAccess.csproj.AssemblyReference.cache
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\obj\Release\net6.0\Utn.Hacienda.Backend.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\obj\Release\net6.0\Utn.Hacienda.Backend.DataAccess.AssemblyInfoInputs.cache
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\obj\Release\net6.0\Utn.Hacienda.Backend.DataAccess.AssemblyInfo.cs
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\obj\Release\net6.0\Utn.Hacienda.Backend.DataAccess.csproj.CoreCompileInputs.cache
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\obj\Release\net6.0\Utn.Hacienda.Backend.DataAccess.csproj.CopyComplete
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\obj\Release\net6.0\Utn.Hacienda.Backend.DataAccess.dll
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\obj\Release\net6.0\refint\Utn.Hacienda.Backend.DataAccess.dll
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\obj\Release\net6.0\Utn.Hacienda.Backend.DataAccess.pdb
+C:\Repository\Hacienda\Utn.Hacienda.Backend.DataAccess\obj\Release\net6.0\ref\Utn.Hacienda.Backend.DataAccess.dll

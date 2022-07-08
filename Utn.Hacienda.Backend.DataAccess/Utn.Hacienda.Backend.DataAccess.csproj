@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utn.Hacienda.Backend.Common\Utn.Hacienda.Backend.Common.csproj" />
+    <ProjectReference Include="..\Utn.Hacienda.Backend.Utilities\Utn.Hacienda.Backend.Utilities.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.90" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.0-rc.2.21480.5" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="3.0.1" />
+  </ItemGroup>
+</Project>
