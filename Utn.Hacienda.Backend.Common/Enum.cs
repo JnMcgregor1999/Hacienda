@@ -10,7 +10,8 @@ namespace Utn.Hacienda.Backend.Common
             List,
             Get,
             Delete,
-            SaveGet
+            SaveGet,
+            ValidateFile
         }
 
         public enum Status
