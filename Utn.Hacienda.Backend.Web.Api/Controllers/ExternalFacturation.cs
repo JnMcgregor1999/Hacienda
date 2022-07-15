@@ -49,9 +49,9 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                     {
                         return BadRequest(result.Result);
                     }
-                    var list = result.DeSerializeObject<IEnumerable<Common.IExternalFacturation>>();
+                    // var list = result.DeSerializeObject<IEnumerable<Common.IExternalFacturation>>();
 
-                    return Ok(list);
+                    return Ok(result);
                 }
             }
             catch (Exception ex)
