@@ -89,3 +89,10 @@ section .wave.wave4
         background-position-x: -1000px;
     }
 }
+@media (min-width: 480px){ /*Responsive*/
+    .img {
+        width: 400px;
+        height: auto;
+    
+    }
+}
