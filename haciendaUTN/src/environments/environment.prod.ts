@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiURL: 'http://localhost/hacienda/api/',
+  apiURL: 'http://10.90.28.167/hacienda/api/',
 };
