@@ -6,7 +6,7 @@ import { Subject } from 'rxjs';
 import { LoginService } from './service/login.service';
 import { takeUntil } from "rxjs/operators";
 import { Router } from '@angular/router';
-import {MatDialog} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { ModalErrorComponent } from '../../../shared/modal/modal-error/modal-error.component';
 
 @Component({
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
     private _commonService: CommonService,
     private _loginService: LoginService,
     public dialog: MatDialog) { }
-    
+
 
   ngOnInit(): void {
   }
@@ -60,7 +60,7 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.invalid) {
       this.submitted = true;
     } else {
-      // this._commonService._setLoading(true); // this line call/show the loading
+      this._commonService._setLoading(true); // this line call/show the loading
       let model: LoginModel = {
         Identification: this.loginForm.get("identification")?.value,
         Password: this.loginForm.get("password")?.value,
@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
               );
             }
           },
-          error: (response: any) => { debugger; this._commonService._setLoading(false); console.log(`e => ${response}`);this.openDialog(response.message) },
+          error: (response: any) => { this._commonService._setLoading(false); console.log(`e => ${response}`); this.openDialog(response.message) },
           complete: () => {
             this._commonService._setLoading(false);
           }
@@ -89,11 +89,24 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  openDialog(messageError:string): void {
+  openDialog(messageError: string): void {
+    const datainfo = {
+      labelTitile: "Error",
+      icon: "cancel",
+      textDescription: messageError,
+      status: "error",
+    };
+
+
     const dialogRef = this.dialog.open(ModalErrorComponent, {
-      width: '250px',
-      data: {message:messageError},
+      data: { datainfo: datainfo },
+      minWidth: "525px",
+      maxWidth: "478px",
+      maxHeight: "277px",
+      minHeight: "277px",
     });
+
+    // setTimeout(() => dialogRef.close(), 3000);
   }
 
 

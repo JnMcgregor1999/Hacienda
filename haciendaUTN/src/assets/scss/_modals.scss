@@ -1,0 +1,413 @@
+@use "variable";
+
+.mat-horizontal-content-container {
+    height: 100%;
+}
+
+.mat-tab-body-wrapper {
+    height: 100%;
+}
+
+/**
+* Styles for basic modal
+**/
+.basic-modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    .modal-icon {
+        position: absolute;
+        left: 12px;
+        top: 8px;
+        font-size: 2rem;
+        color: variable.$white;
+        width: 80%;
+        height: 50%;
+    }
+
+    .modal-header {
+        background-color: variable.$generalColor;
+        height: 3.125rem;
+        padding: 0;
+        align-items: center;
+
+        .modal-title {
+            font-family: variable.$opensans-bold;
+            color: variable.$white;
+            font-size: 1.2rem;
+            margin: auto;
+            text-align: center;
+        }
+
+        .btn-x-close {
+            cursor: pointer;
+            color: variable.$white;
+            position: absolute;
+            right: 1rem;
+        }
+    }
+}
+
+/**
+* Styles for standar modal
+**/
+.modal-standar {
+    @extend .basic-modal;
+
+    .modal-content {
+        top: 3.125rem;
+        bottom: 5rem;
+        position: inherit;
+        left: 0;
+        right: 0;
+        border: none !important;
+        overflow: auto;
+    }
+
+    .modal-footer {
+        bottom: 0;
+        position: inherit;
+        left: 0;
+        right: 0;
+        height: 5rem;
+        border: none !important;
+    }
+}
+
+/**
+* Styles for basic modal
+**/
+.modal-with-stepper {
+    @extend .basic-modal;
+
+    .mat-stepper-horizontal-line {
+        display: none;
+    }
+
+    mat-stepper .mat-step-header {
+        display: none;
+    }
+
+    .modal-content {
+        top: 3.125rem;
+        bottom: 0rem;
+        position: inherit;
+        left: 0;
+        right: 0;
+        border: none !important;
+        overflow: auto;
+        overflow-x: hidden;
+
+        mat-stepper {
+            height: 100% !important;
+
+            .mat-horizontal-content-container {
+                padding-bottom: 0 !important;
+            }
+
+            .mat-horizontal-stepper-content {
+                &[aria-expanded="true"] {
+                    height: 100% !important;
+                }
+            }
+        }
+
+        .container {
+            position: relative;
+            height: calc(100% - 5.5rem);
+            margin-top: 1rem;
+        }
+
+        .modal-content-footer {
+            position: initial;
+            height: 4.5rem;
+            border: none !important;
+
+            button {
+                margin-top: auto !important;
+                margin-bottom: auto !important;
+
+                mat-icon {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+            }
+
+            .btn-save-or-send {
+                background-color: variable.$primaryDarkColor  !important;
+                color: variable.$white  !important;
+                border: 2px solid variable.$primaryDarkColor  !important;
+                align-items: center;
+                font-family: variable.$opensans-regular;
+                font-size: variable.$font-size-small;
+            }
+        }
+    }
+
+    .btn-format {
+        color: #fff;
+        background-color: variable.$primaryDarkColor;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+    }
+
+    .btn-position {
+        position: relative;
+        left: -20%;
+        font-size: 1.7rem;
+        display: table !important;
+    }
+}
+
+/**
+* Styles for the tab-based modal
+**/
+.modal-with-tab {
+    @extend .basic-modal;
+
+    .mat-tab-label {
+        font-family: variable.$opensans-semibold  !important;
+        font-size: variable.$font-size-small  !important;
+        white-space: normal !important;
+        background-color: variable.$primaryDarkColor;
+        color: variable.$white  !important;
+        opacity: 1 !important;
+        width: calc(100% / 4);
+    }
+
+    /* Styles for the active tab label */
+    .mat-tab-label.mat-tab-label-active {
+        font-family: variable.$opensans-semibold  !important;
+        font-size: variable.$font-size-small  !important;
+        white-space: normal !important;
+        background-color: variable.$white  !important;
+        color: variable.$primaryDarkColor  !important;
+    }
+
+    .mat-ink-bar {
+        background-color: variable.$gray600  !important;
+    }
+
+    .modal-content {
+        top: 0;
+        bottom: 0rem;
+        position: inherit;
+        left: 0;
+        right: 0;
+        border: none !important;
+        overflow: auto;
+        overflow-x: hidden;
+
+        mat-tab-group {
+            height: 100% !important;
+
+            .mat-horizontal-content-container {
+                padding-bottom: 0 !important;
+            }
+
+            .mat-horizontal-stepper-content {
+                &[aria-expanded="true"] {
+                    height: 100% !important;
+                }
+            }
+        }
+
+        .container {
+            position: relative;
+            height: calc(100% - 5.5rem);
+            margin-top: 1rem;
+        }
+
+        .modal-content-footer {
+            position: relative;
+            height: 4.5rem;
+            border: none !important;
+
+            button {
+                margin-top: auto !important;
+                margin-bottom: auto !important;
+            }
+
+            .btn-exit {
+                background-color: variable.$white  !important;
+                color: variable.$red100  !important;
+                border: 2px solid variable.$red100  !important;
+                // padding: 0.3rem 1.3rem !important;
+                align-items: center;
+                font-family: variable.$opensans-regular;
+                font-size: variable.$font-size-small;
+            }
+
+            .btn-back-next {
+                background-color: variable.$primaryDarkColor  !important;
+                color: variable.$white  !important;
+                border: 2px solid variable.$primaryDarkColor  !important;
+                align-items: center;
+                justify-content: center;
+                font-family: variable.$opensans-regular;
+                font-size: variable.$font-size-small;
+            }
+        }
+    }
+}
+
+/**********************************************
+*
+* Define dimensions for specific modals
+*
+**********************************************/
+
+.modal-standar-confirm {
+    min-width: 32rem !important;
+    min-height: 22rem !important;
+}
+
+.modal-reception-invoice {
+    min-width: 996px;
+    max-width: 996px !important;
+    max-height: 800px;
+    min-height: 563px;
+}
+
+.modal-review-supplier {
+    min-width: 996px;
+    max-width: 996px !important;
+    max-height: 800px;
+    min-height: 563px;
+    padding: 0;
+}
+
+.modal-work-in-process {
+    min-width: 996px;
+    max-width: 996px !important;
+    max-height: 39rem;
+    min-height: 563px;
+    padding: 0;
+
+    .content-step {
+        min-height: 34rem !important;
+    }
+}
+
+.modal-work-in-process-detail {
+    min-width: 996px;
+    max-width: 996px !important;
+    max-height: 37rem;
+    min-height: 563px;
+    padding: 0;
+
+    .mat-dialog-container {
+        padding: 0;
+    }
+
+    .content-step {
+        min-height: 31rem !important;
+    }
+}
+
+.modal-add-approver-work-process {
+    min-width: 700px;
+    max-width: 947px !important;
+    max-height: 800px;
+    min-height: 330px;
+    padding: 0;
+}
+
+.modal-work-in-process_choice {
+    min-width: 996px;
+    max-width: 996px !important;
+    max-height: 43.1rem;
+    min-height: 40rem;
+    padding: 0;
+}
+
+.modal-review-invoice-record-work-process {
+    min-width: 996px;
+    max-width: 996px !important;
+    max-height: 800px;
+    min-height: 670px;
+    padding: 0;
+}
+
+.modal-record-service-invoice {
+    min-width: 70rem;
+    max-width: 996px !important;
+    max-height: 800px;
+    min-height: 670px;
+    padding: 0;
+}
+
+.modal-upload-documents {
+    min-width: 55rem;
+    max-width: 850px !important;
+    max-height: 600px;
+    min-height: 470px;
+    padding: 0;
+}
+
+.modal-send-pdf-email {
+    min-width: 55rem;
+    max-width: 850px !important;
+    max-height: 780px;
+    min-height: 690px;
+    padding: 0;
+}
+
+.modal-supplier-validate {
+    min-width: 1100px;
+    max-width: 1100px !important;
+    min-height: 40rem !important;
+    max-height: 40rem !important;
+    overflow-y: hidden !important;
+}
+
+.modal-size-add-purchase-order {
+    min-width: 996px;
+    max-width: 996px !important;
+    max-height: 790px;
+    min-height: 43.1rem;
+}
+
+.modal-supplier-detail {
+    min-width: 60rem;
+    max-width: 840px;
+    max-height: 36rem;
+    min-height: 38rem;
+}
+
+.modal-showStores {
+    min-width: 996px;
+    max-width: 996px !important;
+    max-height: 706px;
+    min-height: 616px;
+}
+
+/** 
+Modificaciones especificas para modales 
+**/
+::ng-deep .modal-supplier-detail .mat-dialog-container {
+    padding: 0px !important;
+}
+
+::ng-deep .modal-review-invoice-record-work-process .mat-dialog-container {
+    padding: 0px !important;
+}
+
+::ng-deep .modal-supplier-detail .mat-dialog-container .mat-tab-labels {
+    background-color: variable.$primaryDarkColor  !important;
+}
+
+::ng-deep .modal-supplier-validate .mat-dialog-container {
+    padding: 0px !important;
+}
+
+::ng-deep .modal-showStores .mat-dialog-container {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
+    border-radius: 2px !important;
+    padding: 0px !important;
+}

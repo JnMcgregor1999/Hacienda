@@ -1,0 +1,260 @@
+@use "variable";
+
+$animate-duration: 1s;
+$animate-delay: 1s;
+
+.animated {
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+.animated:hover {
+    transform: scale(1.1);
+
+    &:disabled {
+        transform: none;
+    }
+}
+
+.animate__animated {
+    -webkit-animation-duration: $animate-duration;
+    animation-duration: $animate-duration;
+    -webkit-animation-duration: $animate-duration;
+    animation-duration: $animate-duration;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.delay-faster {
+    @for $i from 1 to 10 {
+        &:nth-child(10n + #{$i}) {
+            animation-delay: $i * 0.01 + s;
+        }
+    }
+}
+
+.delay-fast {
+    @for $i from 1 to 10 {
+        &:nth-child(10n + #{$i}) {
+            animation-delay: $i * 0.05 + s;
+        }
+    }
+}
+
+.delay-standar {
+    @for $i from 1 to 10 {
+        &:nth-child(10n + #{$i}) {
+            animation-delay: $i * 0.1 + s;
+        }
+    }
+}
+
+.delay-slow {
+    @for $i from 1 to 10 {
+        &:nth-child(10n + #{$i}) {
+            animation-delay: $i * 0.15 + s;
+        }
+    }
+}
+
+.delay-slower {
+    @for $i from 1 to 10 {
+        &:nth-child(10n + #{$i}) {
+            animation-delay: $i * 0.2 + s;
+        }
+    }
+}
+
+/* Fading entrances  */
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate__fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate__fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animate__fadeInDown {
+    -webkit-animation-name: fadeInDown;
+    animation-name: fadeInDown;
+}
+
+.animate__pulse {
+    animation-name: pulse;
+    animation: pulse 0.9s infinite ease-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0);
+        /* scaling to 0 */
+    }
+
+    50% {
+        transform: scale(1.2);
+        /* increasing the size */
+    }
+
+    70% {
+        transform: scale(0.65);
+        /* decreasing the size */
+    }
+
+    100% {
+        transform: scale(0);
+        /* seeting back to initial size */
+    }
+}
+
+.glassmorphism-section {
+    &:hover {
+        .content {
+            transform: translateY(-25px);
+        }
+
+        p {
+            font-size: variable.$font-size-small;
+        }
+
+        .sci {
+            li {
+                transform: translateY(0px);
+                opacity: 1;
+            }
+        }
+    }
+
+    .sci {
+        position: absolute;
+        bottom: 10px;
+        display: flex;
+        left: 10px;
+        width: calc(100% - 20px);
+        right: 10px;
+        padding: 0;
+
+        li {
+            list-style: none;
+            margin: 0 10px;
+            transform: translateY(40px);
+            transition: 0.5s;
+            opacity: 0;
+            width: 50%;
+            text-align: center;
+            text-decoration: underline;
+
+            a {
+                color: variable.$primaryDarkColor;
+                font-size: 1.25rem;
+
+                &:hover {
+                    color: variable.$generalColorHover;
+                    text-decoration-color: variable.$generalColorHover;
+                }
+            }
+        }
+    }
+}
+
+.collapsing-info {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s ease;
+}
+
+.heigth-info {
+    position: relative;
+    height: 4.5rem;
+    transition: height 0.35s ease;
+}
+
+.show-info {
+    @extend .heigth-info;
+    height: 4.5rem;
+}
+
+.show-inputs {
+    @extend .heigth-info;
+    height: 12rem;
+}

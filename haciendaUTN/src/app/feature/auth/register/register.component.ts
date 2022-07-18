@@ -1,9 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { RegisterModel } from '@core/model/register.model';
 import { Type_CatalogModel } from '@core/model/type_Catalog.module';
+import { environment } from '@env/environment';
 import { CommonService } from '@shared/services/common.service';
+import { dropzoneConfig } from '@util/dropzoneConfig';
+import { ModalErrorComponent } from 'app/shared/modal/modal-error/modal-error.component';
+import { DropzoneComponent, DropzoneConfigInterface, DropzoneDirective } from 'ngx-dropzone-wrapper';
 import { Subject } from 'rxjs';
 import { takeUntil } from "rxjs/operators";
 import { RegisterService } from './services/register.services';
@@ -52,14 +57,48 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
 
   public identificationTypeSelected: number = 0;
+  dropzone: any;
+  files: Array<any> = [];
+  arrayDocuments: Array<any> = [];
+  addedNewFile: boolean = false;
+
+  @ViewChild(DropzoneComponent) componentRef?: DropzoneComponent;
+  @ViewChild(DropzoneDirective) directiveRef?: DropzoneDirective;
+
+  public config: DropzoneConfigInterface = {
+    paramName: "file",
+    clickable: true,
+    url: environment.apiURL + 'api/Document/Upload',
+    method: 'POST',
+    maxFilesize: 10,
+    maxFiles: 5,
+    dictResponseError: 'Ha ocurrido un error en el servidor',
+    acceptedFiles: '.json',
+    autoProcessQueue: false,
+    // parallelUploads: 5,
+    uploadMultiple: false,
+    chunking: false,
+    addRemoveLinks: true,
+    dictRemoveFile: "Borrar archivo",
+    dictFileTooBig: "El archivo es muy grande ({{filesize}}) para cargarlo en el sistema. Capacidad maxima {{maxFilesize}}MB",
+    dictUploadCanceled: "La carga de archivos ha sido cancelada.",
+    timeout: 1200000000
+  };
+
 
   constructor(private form: FormBuilder,
     private _router: Router,
     private _commonService: CommonService,
-    private _registerService: RegisterService) { }
+    private _registerService: RegisterService,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getCatalogTypeIdentification();
+  }
+
+  ngAfterViewInit() {
+    this.dropzone = this.componentRef.directiveRef.dropzone();
+    debugger
   }
 
   /******************************************************
@@ -115,10 +154,10 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
 
   /******************************************************
-     * Author: Johan McGregor
-     * Creation date: 02/07/2022
-     * Description: Method that save user information
-     *******************************************************/
+  * Author: Johan McGregor
+  * Creation date: 02/07/2022
+  * Description: Method that save user information
+  *******************************************************/
   save() {
     if (this.registerForm.invalid) {
       this.submitted = true;
@@ -130,24 +169,115 @@ export class RegisterComponent implements OnInit, OnDestroy {
         full_Name: this.registerForm.get("full_Name")?.value,
         email: this.registerForm.get("email")?.value,
         password: this.registerForm.get("password")?.value,
-        active: true
+        active: true,
+        fileUpload: new Array<any>()
       }
 
-      this._registerService
-        .save(model)
-        .pipe(takeUntil(this.unsubscribe$))
-        .subscribe({
-          next: (response: any) => {
-            this._commonService._setLoading(false);// this line hidden the loading
-            this._router.navigate(
-              ['login']
-            );
-          },
-          error: (response: any) => { this._commonService._setLoading(false); console.log(`e => ${response}`) },
-          complete: () => {
-            this._commonService._setLoading(false);
-          }
-        });
+      // this._registerService
+      //   .save(model)
+      //   .pipe(takeUntil(this.unsubscribe$))
+      //   .subscribe({
+      //     next: (response: any) => {
+      //       this._commonService._setLoading(false);// this line hidden the loading
+      //       this._router.navigate(
+      //         ['login']
+      //       );
+      //     },
+      //     error: (response: any) => { this._commonService._setLoading(false); console.log(`e => ${response}`) },
+      //     complete: () => {
+      //       this._commonService._setLoading(false);
+      //     }
+      //   });
+    }
+  }
+
+  /******************************************************
+  * Author: Johan McGregor
+  * Creation date: 16/07/2022
+  * Description: method that dropzone configuration
+  *******************************************************/
+  // get config() {
+  //   dropzoneConfig.url = environment.apiURL + "api/BlobFile/saveFileBlobStorage";
+  //   return dropzoneConfig
+  // }
+
+  /******************************************************
+  * Author: Johan McGregor
+  * Creation date: 16/07/2022
+  * Description: method that opens the error modal
+  *******************************************************/
+  onUploadError(args: any): void {
+    this.addedNewFile = false;
+    this._commonService._setLoading(false);
+    var error = "";
+    if (args[1] == "You can't upload files of this type.") {
+      error =
+        "El archivo " + args[0].name + " contiene una extensión no permitida.";
+    }
+
+    const datainfo = {
+      labelTitile: "Error",
+      icon: "cancel",
+      textDescription: error != "" ? error : args[1],
+      status: "error",
+    };
+
+    const dialogRef = this.dialog.open(ModalErrorComponent, {
+      data: { datainfo: datainfo },
+      minWidth: "478px",
+      maxWidth: "478px",
+      maxHeight: "277px",
+      minHeight: "277px",
+    });
+    setTimeout(() => dialogRef.close(), 3000);
+  }
+
+
+
+  /******************************************************
+  * Author: Johan McGregor
+  * Creation date: 16/07/2022
+  * Description: method that dropzone configuration
+  *******************************************************/
+  onRemove(file: any) {
+    this.dropzone.removeAllFiles(true);
+    this.files.splice(this.files.indexOf(file), 1);
+  }
+
+  /***********************************************************************************
+  * Author: Johan McGregor
+  * Creation date: 16/07/2022
+  * Description:add new file
+  * ***********************************************************************************/
+  async onAddedFile(file: any) {
+    let data = {
+      file_Name: file.name,
+      mime_Type: file.type,
+      file_original: file.name,
+    };
+    this.files.push(data);
+  }
+
+
+  /******************************************************
+  * Author: Johan McGregor
+  * Creation date: 16/07/2022
+  * Description: method that shows the modal of success
+  *******************************************************/
+  onUploadSuccess(args: any): void {
+    let dataRegistersCount = args[0].name;
+    if (dataRegistersCount !== "") {
+
+
+    }
+  }
+
+  prossesInformation() {
+    if (this.files.length == 0) {
+      // this.openModalError();
+    } else {
+      this._commonService._setLoading(true);
+      this.dropzone.processQueue();
     }
   }
 

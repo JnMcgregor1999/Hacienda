@@ -79,9 +79,10 @@ namespace Utn.Hacienda.Backend.BusinessLogic
                     modelInvoice.Creation_User = "api";
                     modelInvoice.Modification_User = "api";
                     modelInvoice.Reference_Number = model.Item.Reference_Number;
-                    modelInvoice.Invoice_Url = model.Item.New_File;
+                    modelInvoice.Invoice_Url = model.Item.File_Path;
                     modelInvoice.Fk_Mtr_Customer = customerResponse.Pk_Mtr_Customer;
                     modelInvoice.Fk_Mtr_User = userResponse.Pk_Mtr_User;
+                    modelInvoice.Active = true;
 
                     // Mandamos a llamar el business para que guarde los datos
                     var invoiceRepository = new Mtr_Invoice_Repository(message.Connection);

@@ -76,8 +76,14 @@
                     <br>
                     <div class="row mb-6">
                         <div class="col-sm-12">
-                            <label class="form-label" >Subir archivo:</label>
-                            <input class="form-control" type="file" name="archivosubido" required>
+                            <label class="form-label">Subir archivo:</label>
+                            <dropzone class="upload-files-lbl-container"
+                                aria-label="Arrastre su archivo hasta esta área" [config]="config"
+                                [message]="'Arrastre su archivo hasta esta área'" (error)="onUploadError($event)"
+                                (success)="onUploadSuccess($event)" (addedFile)="onAddedFile($event)"
+                                (removed)="onRemove($event)">
+                                <div class="icon-upload mt-3"></div>
+                            </dropzone>
                         </div>
                     </div>
                     <br><br>

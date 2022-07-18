@@ -3,12 +3,15 @@
 * Creation date: 07/02/2022
 * Description: Creation and design of the login screen.
 *******************************************************/ -->
+
 <body class="m-0 vh-100 row justify-content-center align-items-center" style="background-color: #a4d3eb;">
     <div class="container col-auto  p-5 text-center">
         <br>
         <div class="card text-center" style="width: 100%; height: 100%; z-index: 1050">
             <div class="card-body">
-                <a [routerLink]="['login']"><p style="text-align: right;">Cerrar sessión</p></a> 
+                <a [routerLink]="['login']">
+                    <p style="text-align: right;">Cerrar sessión</p>
+                </a>
                 <img class="img" src="assets/img/logo.jpeg" alt="logo" />
                 <hr>
                 <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
@@ -17,8 +20,8 @@
                             href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Registro</a>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <a [routerLink]="['/dashboard']" class="nav-link active" id="tab-register" data-mdb-toggle="pill"
-                            href="#pills-register" role="tab" aria-controls="pills-register"
+                        <a [routerLink]="['/dashboard']" class="nav-link active" id="tab-register"
+                            data-mdb-toggle="pill" href="#pills-register" role="tab" aria-controls="pills-register"
                             aria-selected="false">Facturas</a>
                     </li>
                 </ul>
@@ -27,25 +30,27 @@
                         <br>
                         <h3>Facturas registradas</h3>
                         <br>
-                        <form >
+                        <form>
                             <table class="table">
                                 <thead>
-                                  <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Nombre</th>
-                                    <th scope="col">Fecha</th>
-                                    <th scope="col">Ver</th>
-                                  </tr>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Nombre</th>
+                                        <th scope="col">Fecha</th>
+                                        <th scope="col">Ver</th>
+                                    </tr>
                                 </thead>
                                 <tbody>
-                                  <tr *ngFor="let item of allInvoiceData">
-                                    <th scope="row">{{item.pk_Mtr_Invoice}}</th>
-                                    <td>{{item.reference_Number}}</td>
-                                    <td>{{item.creation_Date}}</td>
-                                    <td><a target="_blank" href="{{item.invoice_Url}}"><img src="../../../assets/img/ver.png" alt="" style="width: 20px;"></a></td>
-                                  </tr>
+                                    <tr *ngFor="let item of allInvoiceData">
+                                        <th scope="row">{{item.pk_Mtr_Invoice}}</th>
+                                        <td>{{item.reference_Number}}</td>
+                                        <td>{{item.creation_Date}}</td>
+                                        <td><a target="_blank" href="{{item.invoice_Url}}"><img
+                                                    src="../../../assets/img/ver.png" alt="" style="width: 20px;"></a>
+                                        </td>
+                                    </tr>
                                 </tbody>
-                              </table>   
+                            </table>
                         </form>
                     </div>
                 </div>
@@ -60,4 +65,3 @@
         </section>
     </div>
 </body>
-

@@ -9,6 +9,8 @@ import { LoadingModule } from './shared/loading/loading.module';
 import { SharedModule } from './shared/shared.module';
 import {MatDialogModule} from '@angular/material/dialog'
 
+import { DropzoneModule } from 'ngx-dropzone-wrapper';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import {MatDialogModule} from '@angular/material/dialog'
     AppRoutingModule,
     SharedModule,
     LoadingModule,
-    MatDialogModule
+    MatDialogModule,
+
+    DropzoneModule
   ],
   providers: [],
   bootstrap: [AppComponent]

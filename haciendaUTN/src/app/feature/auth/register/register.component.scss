@@ -3,18 +3,18 @@
 // * Creation date: 06/30/2022
 // * Description: Design of the register screen.
 // *******************************************************/ 
-body, html {
+body,
+html {
     // height: 100%;
-    background-image: linear-gradient(135deg, rgb(165, 186, 211) 0%, rgba(58,139,232,1) 47%, rgba(70,153,234,1) 92%, rgb(165, 186, 211) 100%);
+    background-image: linear-gradient(135deg, rgb(165, 186, 211) 0%, rgba(58, 139, 232, 1) 47%, rgba(70, 153, 234, 1) 92%, rgb(165, 186, 211) 100%);
 }
 
 
-.formulario
-{
+.formulario {
     width: 80%;
 }
-section .wave
-{
+
+section .wave {
     position: absolute;
     bottom: 0;
     left: 0;
@@ -24,8 +24,7 @@ section .wave
     background-size: 1000px 100px;
 }
 
-section .wave.wave1
-{
+section .wave.wave1 {
     animation: animate 10s linear infinite;
     z-index: 1000;
     opacity: 1;
@@ -33,8 +32,7 @@ section .wave.wave1
     bottom: 0;
 }
 
-section .wave.wave2
-{
+section .wave.wave2 {
     animation: animate2 15s linear infinite;
     z-index: 999;
     opacity: 0.5;
@@ -42,8 +40,7 @@ section .wave.wave2
     bottom: 10px;
 }
 
-section .wave.wave3
-{
+section .wave.wave3 {
     animation: animate 30s linear infinite;
     z-index: 998;
     opacity: 0.2;
@@ -51,8 +48,7 @@ section .wave.wave3
     bottom: 15;
 }
 
-section .wave.wave4
-{
+section .wave.wave4 {
     animation: animate2 5s linear infinite;
     z-index: 997;
     opacity: 0.7;
@@ -60,39 +56,41 @@ section .wave.wave4
     bottom: 20px;
 }
 
-.patito 
-{
+.patito {
     background-color: red;
     width: 100%;
 }
 
-@keyframes animate
-{
-    0%
-    {
+::ng-deep dropzone>.dropzone.dz-wrapper .dz-message {
+    padding: 20px 0;
+}
+
+@keyframes animate {
+    0% {
         background-position-x: 0;
     }
-    100%
-    {
+
+    100% {
         background-position-x: 1000px;
     }
 }
 
-@keyframes animate2
-{
-    0%
-    {
+@keyframes animate2 {
+    0% {
         background-position-x: 0;
     }
-    100%
-    {
+
+    100% {
         background-position-x: -1000px;
     }
 }
-@media (min-width: 480px){ /*Responsive*/
+
+@media (min-width: 480px) {
+
+    /*Responsive*/
     .img {
         width: 400px;
         height: auto;
-    
+
     }
 }

@@ -47,15 +47,42 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                     var result = await businessLgic.DoWork(message);
                     if (result.Status == Status.Failed)
                     {
-                        return BadRequest(result.Result);
+                        var signature_ErrorResponse = new
+                        {
+                            item = new
+                            {
+                                New_File = "",
+                                code = 400,
+                                message = result.Result
+                            }
+                        };
+                        return BadRequest(signature_ErrorResponse);
                     }
-                    // var list = result.DeSerializeObject<IEnumerable<Common.IExternalFacturation>>();
+                    var list = result.DeSerializeObject<Common.IExternalFacturation>();
+                    var signature_SuccessResponse = new
+                    {
+                        item = new
+                        {
+                            New_File = list.Item.New_File,
+                            code = 200,
+                            message = result.Result
+                        }
+                    };
 
-                    return Ok(result);
+                    return Ok(signature_SuccessResponse);
                 }
             }
             catch (Exception ex)
             {
+                var signature_ExceptionResponse = new
+                {
+                    item = new
+                    {
+                        New_File = "",
+                        code = 400,
+                        message = ex
+                    }
+                };
                 return BadRequest(ex);
             }
         }

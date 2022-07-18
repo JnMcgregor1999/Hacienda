@@ -19,6 +19,8 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "jquery": "^3.6.0",
+    "ngx-dropzone-wrapper": "^11.0.0",
     "ngx-loading": "^13.0.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
