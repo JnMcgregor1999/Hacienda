@@ -2,7 +2,7 @@
             <div class="card-body" style="z-index: 1100">
                 
                 <div mat-dialog-content>
-                    <h3>Datos no registrados</h3>
+                    
                 </div>
                 <div mat-dialog-actions>
                     <img src="../../../assets/img/advertencia.png" alt="" style="width: 70%; height: 70%;" >
@@ -13,18 +13,23 @@
         </div>
      -->
 
-
-<div class="modal-standar" style="width: 100%; height: 100%; z-index: 1100">
-    <div class="row m-0 modal-header">
-        <mat-icon class="modal-icon"
-            [ngClass]="{'success': status == 'success', 'error': status == 'error', 'warning': status == 'warning'}">
-            {{icon}}
-        </mat-icon>
-        <label class="modal-title">¡{{labelTitile}}!</label>
-    </div>
-    <div class="row m-0 modal-content" style="bottom: 0;">
-        <div class="row m-0 mt-auto mb-auto">
-            <h5 class="feedback-modal-title w-100">{{textDescription}}</h5>
+<div class="indexz">
+    <div class="modal-standar" style="width: 100%; height: 100%;">
+        <div class="row m-0 modal-header">
+            <mat-icon class="modal-icon"
+                [ngClass]="{'success': status == 'success', 'error': status == 'error', 'warning': status == 'warning'}">
+                {{icon}}
+    
+            </mat-icon>
+            <label class="modal-title">¡{{labelTitile}}!</label>
+        </div>
+        <div class="row m-0 modal-content" style="bottom: 0;">
+            <div class="row m-0 mt-auto mb-auto">
+                <h2 class="subtitle">¡Datos no encontrados!</h2>
+                <br><br>
+                <h5 class="feedback-modal-title w-100" style="font-size: 20px; color: red;">{{textDescription}}</h5>
+            </div>
         </div>
     </div>
+
 </div>

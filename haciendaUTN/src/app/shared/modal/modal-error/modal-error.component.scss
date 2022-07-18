@@ -1,5 +1,13 @@
 @use "variable";
 
+.indexz{
+    z-index: 1200;
+}
+.subtitle{
+    text-align: center;
+    font-weight: 700;
+}
+
 .feedback-modal-title {
     font-family: variable.$opensans-bold;
     font-size: variable.$font-size-medium;
