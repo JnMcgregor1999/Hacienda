@@ -31,19 +31,21 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                    model.Item.Client_Name == "" ||
                    model.Item.File_Path == "" ||
                    model.Item.New_File == "" ||
-                   model.Item.Reference_Number == ""
+                   model.Item.Reference_Number == "" ||
+                   model.Item.Client_Identification == "" ||
+                   model.Item.Commercial_Identification == ""
                    )
                 {
                     message.Status = Status.Failed;
                     var signature_ErrorResponseInvalidObjet = new
+                    {
+                        item = new
                         {
-                            item = new
-                            {
-                                New_File = "",
-                                code = 400,
-                                message = "Invalid Object"
-                            }
-                        };
+                            New_File = "",
+                            code = 400,
+                            message = "Invalid Object"
+                        }
+                    };
                     return BadRequest(signature_ErrorResponseInvalidObjet);
                 }
 
@@ -92,7 +94,7 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                         message = ex
                     }
                 };
-                return BadRequest(ex);
+                return BadRequest(signature_ExceptionResponse);
             }
         }
         #endregion Region [Methods]
