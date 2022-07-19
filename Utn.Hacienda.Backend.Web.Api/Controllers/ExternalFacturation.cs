@@ -35,7 +35,16 @@ namespace Utn.Hacienda.Backend.WepApi.Controllers
                    )
                 {
                     message.Status = Status.Failed;
-                    return BadRequest("Invalid Object");
+                    var signature_ErrorResponseInvalidObjet = new
+                        {
+                            item = new
+                            {
+                                New_File = "",
+                                code = 400,
+                                message = "Invalid Object"
+                            }
+                        };
+                    return BadRequest(signature_ErrorResponseInvalidObjet);
                 }
 
                 message.BusinessLogic = configuration.GetValue<string>("AppSettings:BusinessLogic:ExternalFacturation");
