@@ -17,6 +17,7 @@ namespace Utn.Hacienda.Backend.Common
             Password = "";
             Active = false;
             Public_Key = "";
+            Is_Update_Public_Key = false;
         }
         public Int64 Pk_Mtr_User { get; set; }
         public String Creation_User { get; set; }
@@ -30,5 +31,6 @@ namespace Utn.Hacienda.Backend.Common
         public String Password { get; set; }
         public Boolean Active { get; set; }
         public String Public_Key { get; set; }
+        public Boolean Is_Update_Public_Key { get; set; }
     }
 }

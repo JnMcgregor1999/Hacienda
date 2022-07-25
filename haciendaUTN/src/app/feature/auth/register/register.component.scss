@@ -3,6 +3,8 @@
 // * Creation date: 06/30/2022
 // * Description: Design of the register screen.
 // *******************************************************/ 
+// @use "variable";
+
 body,
 html {
     // height: 100%;
@@ -93,4 +95,20 @@ section .wave.wave4 {
         height: auto;
 
     }
+}
+
+
+.document-icon {
+    background-image: url(../../../../assets/img/filessmall.svg);
+    background-repeat: no-repeat;
+    height: 6.5rem;
+    width: 6rem;
+    margin-top: 0.2rem;
+    margin-left: 2.5rem !important;
+}
+
+.delete-document {
+    cursor: pointer;
+    color: rgba(58, 139, 232, 1);
+    width: 50px;
 }

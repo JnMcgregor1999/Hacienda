@@ -28,6 +28,8 @@ namespace Utn.Hacienda.Backend.BusinessLogic
                     case Operation.Get:
                         return await Get(message);
                     case Operation.Save:
+                        return await Save(message);
+                    case Operation.SaveGet:
                         return await SaveGet(message);
                     case Operation.Delete:
                         return await Delete(message);
@@ -146,7 +148,7 @@ namespace Utn.Hacienda.Backend.BusinessLogic
         }
 
 
-         public async virtual Task<Message> SaveGet(Message message)
+        public async virtual Task<Message> SaveGet(Message message)
         {
             try
             {
@@ -154,7 +156,7 @@ namespace Utn.Hacienda.Backend.BusinessLogic
                 var model = message.DeSerializeObject<Common.Mtr_User>();
                 using (var repository = new Mtr_User_Repository(message.Connection))
                 {
-                    var returnObject =  await repository.SaveGet(model);
+                    var returnObject = await repository.SaveGet(model);
                     resultMessage.Status = Status.Success;
                     resultMessage.Result = "Proceso efectuado satisfactoriamente...";
                     resultMessage.MessageInfo = returnObject.SerializeObject();

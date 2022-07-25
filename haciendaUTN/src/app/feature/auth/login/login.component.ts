@@ -106,7 +106,7 @@ export class LoginComponent implements OnInit {
       minHeight: "277px",
     });
 
-    // setTimeout(() => dialogRef.close(), 3000);
+    setTimeout(() => dialogRef.close(), 3000);
   }
 
 

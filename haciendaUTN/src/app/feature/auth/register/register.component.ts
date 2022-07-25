@@ -56,34 +56,33 @@ export class RegisterComponent implements OnInit, OnDestroy {
   public identification_type: Array<any> = new Array();
 
 
-  public identificationTypeSelected: number = 0;
-  dropzone: any;
-  files: Array<any> = [];
-  arrayDocuments: Array<any> = [];
-  addedNewFile: boolean = false;
-
   @ViewChild(DropzoneComponent) componentRef?: DropzoneComponent;
   @ViewChild(DropzoneDirective) directiveRef?: DropzoneDirective;
 
-  public config: DropzoneConfigInterface = {
-    paramName: "file",
-    clickable: true,
-    url: environment.apiURL + 'api/Document/Upload',
-    method: 'POST',
-    maxFilesize: 10,
-    maxFiles: 5,
-    dictResponseError: 'Ha ocurrido un error en el servidor',
-    acceptedFiles: '.json',
-    autoProcessQueue: false,
-    // parallelUploads: 5,
-    uploadMultiple: false,
-    chunking: false,
-    addRemoveLinks: true,
-    dictRemoveFile: "Borrar archivo",
-    dictFileTooBig: "El archivo es muy grande ({{filesize}}) para cargarlo en el sistema. Capacidad maxima {{maxFilesize}}MB",
-    dictUploadCanceled: "La carga de archivos ha sido cancelada.",
-    timeout: 1200000000
-  };
+  dropzone: any;
+  files: Array<any> = [];
+  userInfo: RegisterModel;
+
+
+  // public config: DropzoneConfigInterface = {
+  //   paramName: "file",
+  //   clickable: true,
+  //   url: environment.apiURL + 'api/Document/Upload',
+  //   method: 'POST',
+  //   maxFilesize: 10,
+  //   maxFiles: 5,
+  //   dictResponseError: 'Ha ocurrido un error en el servidor',
+  //   acceptedFiles: '.json',
+  //   autoProcessQueue: false,
+  //   // parallelUploads: 5,
+  //   uploadMultiple: false,
+  //   chunking: false,
+  //   addRemoveLinks: true,
+  //   dictRemoveFile: "Borrar archivo",
+  //   dictFileTooBig: "El archivo es muy grande ({{filesize}}) para cargarlo en el sistema. Capacidad maxima {{maxFilesize}}MB",
+  //   dictUploadCanceled: "La carga de archivos ha sido cancelada.",
+  //   timeout: 1200000000
+  // };
 
 
   constructor(private form: FormBuilder,
@@ -98,7 +97,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
 
   ngAfterViewInit() {
     this.dropzone = this.componentRef.directiveRef.dropzone();
-    debugger
+
   }
 
   /******************************************************
@@ -161,33 +160,33 @@ export class RegisterComponent implements OnInit, OnDestroy {
   save() {
     if (this.registerForm.invalid) {
       this.submitted = true;
+    } else if (this.files.length == 0) {
+      this.openModalMessage("No se ha seleccionado ningun archivos")
     } else {
       this._commonService._setLoading(true); // this line call/show the loading
       let model: RegisterModel = {
-        fk_Catalog_Identification_Type: 1,
+        fk_Catalog_Identification_Type: Number(this.registerForm.get("fk_Catalog_Identification_Type")?.value),
         identification: this.registerForm.get("identification")?.value,
         full_Name: this.registerForm.get("full_Name")?.value,
         email: this.registerForm.get("email")?.value,
         password: this.registerForm.get("password")?.value,
-        active: true,
-        fileUpload: new Array<any>()
+        active: true
       }
 
-      // this._registerService
-      //   .save(model)
-      //   .pipe(takeUntil(this.unsubscribe$))
-      //   .subscribe({
-      //     next: (response: any) => {
-      //       this._commonService._setLoading(false);// this line hidden the loading
-      //       this._router.navigate(
-      //         ['login']
-      //       );
-      //     },
-      //     error: (response: any) => { this._commonService._setLoading(false); console.log(`e => ${response}`) },
-      //     complete: () => {
-      //       this._commonService._setLoading(false);
-      //     }
-      //   });
+      this._registerService
+        .save(model)
+        .pipe(takeUntil(this.unsubscribe$))
+        .subscribe({
+          next: (response: any) => {
+            this.userInfo = response;
+            // this._commonService._setLoading(false);// this line hidden the loading
+            this.prossesInformation();
+          },
+          error: (response: any) => { console.log(`${response}`) },
+          complete: () => {
+            this._commonService._setLoading(false);
+          }
+        });
     }
   }
 
@@ -196,10 +195,10 @@ export class RegisterComponent implements OnInit, OnDestroy {
   * Creation date: 16/07/2022
   * Description: method that dropzone configuration
   *******************************************************/
-  // get config() {
-  //   dropzoneConfig.url = environment.apiURL + "api/BlobFile/saveFileBlobStorage";
-  //   return dropzoneConfig
-  // }
+  get config() {
+    dropzoneConfig.url = environment.apiURL + "api/BlobFile/UploadFile";
+    return dropzoneConfig
+  }
 
   /******************************************************
   * Author: Johan McGregor
@@ -207,7 +206,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
   * Description: method that opens the error modal
   *******************************************************/
   onUploadError(args: any): void {
-    this.addedNewFile = false;
     this._commonService._setLoading(false);
     var error = "";
     if (args[1] == "You can't upload files of this type.") {
@@ -244,19 +242,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.files.splice(this.files.indexOf(file), 1);
   }
 
-  /***********************************************************************************
-  * Author: Johan McGregor
-  * Creation date: 16/07/2022
-  * Description:add new file
-  * ***********************************************************************************/
-  async onAddedFile(file: any) {
-    let data = {
-      file_Name: file.name,
-      mime_Type: file.type,
-      file_original: file.name,
-    };
-    this.files.push(data);
-  }
+
 
 
   /******************************************************
@@ -265,21 +251,68 @@ export class RegisterComponent implements OnInit, OnDestroy {
   * Description: method that shows the modal of success
   *******************************************************/
   onUploadSuccess(args: any): void {
-    let dataRegistersCount = args[0].name;
-    if (dataRegistersCount !== "") {
-
-
-    }
+    this._router.navigate(
+      ['login']
+    );
   }
 
   prossesInformation() {
     if (this.files.length == 0) {
-      // this.openModalError();
+      this.openModalMessage("No hay archivos que procesar");
     } else {
       this._commonService._setLoading(true);
       this.dropzone.processQueue();
     }
   }
+
+  openModalMessage(messageError: string): void {
+    const datainfo = {
+      labelTitile: "Error",
+      icon: "cancel",
+      textDescription: messageError,
+      status: "error",
+    };
+
+
+    const dialogRef = this.dialog.open(ModalErrorComponent, {
+      data: { datainfo: datainfo },
+      minWidth: "525px",
+      maxWidth: "478px",
+      maxHeight: "277px",
+      minHeight: "277px",
+    });
+
+    setTimeout(() => dialogRef.close(), 3000);
+  }
+
+  /***********************************************************************************
+  * Author:JnMcGregor
+  * Creation date: 29/01/2019
+  * Description:add new file
+  * ***********************************************************************************/
+  onAddedFile(file) {
+    let data = {
+      file_Name: file.name,
+      mime_Type: file.type,
+      file_original: file.name
+    }
+    this.files.push(data);
+  }
+
+  /***********************************************************************************
+ * Author: JnMcGregor
+ * Creation date: 29/01/2019
+ * Description:on event send files
+ * ***********************************************************************************/
+  onSending(file) {
+    file[2].append("pk_Mtr_User", this.userInfo.pk_Mtr_User);
+  }
+
+  deleteDocument(file) {
+    this.files = this.files.filter(item => item.file_Name !== file.file_Name);
+  }
+
+
 
   /******************************************************
    * Author: Johan McGregor

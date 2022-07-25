@@ -29,6 +29,7 @@ import { DropzoneModule } from 'ngx-dropzone-wrapper';
 
     DropzoneModule
   ],
+  exports: [RouterModule],
   providers: [],
   bootstrap: [AppComponent]
 })
