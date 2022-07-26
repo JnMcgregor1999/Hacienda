@@ -107,7 +107,11 @@ namespace Utn.Hacienda.Backend.BusinessLogic
                     var signatureResponse = SendRequest.InvokePost(apiSignature, methodApiSignature, modelSignature);
                     Common.IExternalSignature signature_Response_Deserialization = JsonConvert.DeserializeObject<Common.IExternalSignature>(signatureResponse);
 
-                    throw new Exception("Error validacion firma");
+                    if (!signature_Response_Deserialization.Item.isValid)
+                    {
+                        throw new Exception("Error validacion firma");
+                    }
+
                 }
 
                 if (userResponse.Pk_Mtr_User > 0)
