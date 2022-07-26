@@ -131,10 +131,6 @@ namespace Utn.Hacienda.Backend.BusinessLogic
                     // await invoiceRepository.Save(modelInvoice);
 
 
-                    // Creamos el objeto parametros para mandarlo a firma
-                    var modelSignature = new Common.IExternalSignature();
-                    modelSignature.Item.Public_Key = userResponse.Public_Key;
-
                     newXmlBase64 = await generateXML(model.Item.New_File);
                 }
                 else
