@@ -8,10 +8,26 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class ModalErrorComponent implements OnInit {
   message: string = "";
+
+  icon: any;
+  labelTitile: string;
+  textDescription: any;
+  status: any;
+
+
   constructor(
     public dialogRef: MatDialogRef<ModalErrorComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) { this.message = data.message; }
+  ) {
+    if (this.data !== null && this.data !== undefined) {
+      this.labelTitile = this.data.datainfo.labelTitile;
+      this.icon = this.data.datainfo.icon;
+      this.textDescription = this.data.datainfo.textDescription;
+      this.status = this.data.datainfo.status;
+    } else {
+      this.labelTitile = 'Lo sentimos parece que algo anda mal';
+    }
+  }
 
   ngOnInit(): void {
   }

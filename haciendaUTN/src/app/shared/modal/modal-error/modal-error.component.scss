@@ -1,0 +1,50 @@
+@use "variable";
+
+.indexz{
+    z-index: 1200;
+}
+.subtitle{
+    text-align: center;
+    font-weight: 700;
+}
+
+.feedback-modal-title {
+    font-family: variable.$opensans-bold;
+    font-size: variable.$font-size-medium;
+    color: variable.$black;
+    text-align: center;
+}
+
+.feedback-modal-description {
+    font-family: variable.$opensans-semibold;
+    font-size: variable.$font-size-small;
+    color: variable.$gray700;
+    text-align: center;
+}
+
+::ng-deep.feedback-icon {
+    background-repeat: no-repeat;
+    height: 8.43rem !important;
+    width: 8.43rem !important;
+    font-size: 127px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin: auto;
+}
+
+.error {
+    color: red;
+}
+
+.success {
+    color: variable.$primaryDarkColor;
+}
+
+.warning {
+    color: variable.$yellow;
+}
+
+::ng-deep .mat-slide-toggle.mat-disabled {
+    opacity: 1;
+}

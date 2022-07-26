@@ -1,1 +1,575 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "variable";
+@import "modals";
+@import "buttons";
+@import "borders";
+@import "animations";
+
+
+
+//#region cssSnackBar
+.budget-snackbar {
+    background: $white;
+    color: $primaryDarkColor;
+    border: 1px solid !important;
+    border-color: $primaryDarkColor;
+    font-family: $opensans-bold  !important;
+    font-size: $font-size-medium  !important;
+}
+
+:host .actionButtonLabel {
+    color: $secondaryDarkColor;
+}
+
+:root {
+    --indigo: $generalColor  !important;
+    --primary: $generalColor  !important;
+}
+
+.primary-dark {
+    background-color: $generalColor  !important;
+}
+
+
+
+//#endregion cssSnackBar
+
+::placeholder {
+    text-align: center;
+}
+
+.btn-disabled {
+    background-color: $gray500  !important;
+    color: #ffff !important;
+}
+
+.mat-dialog-container {
+    position: relative;
+
+    .modal-container {
+        position: absolute;
+        top: 0;
+        bottom: 50px;
+
+        .mat-horizontal-content-container {
+            padding: 0 24px 0px 24px !important;
+        }
+
+        mat-stepper {
+            .content-step {
+                min-height: 28.5rem;
+            }
+
+            .modal-footer-container {
+                position: absolute;
+                bottom: 16px;
+                left: 32px;
+                right: 32px;
+                width: calc(100% - 32px) !important;
+            }
+        }
+    }
+}
+
+.mat-tab-info-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.btn-success-form {
+    background-color: $primaryDarkColor  !important;
+    color: $white  !important;
+    border: 2px solid $primaryDarkColor  !important;
+    padding: 0.3rem 1.3rem !important;
+    align-items: center;
+    font-family: $opensans-regular;
+    font-size: $font-size-small;
+}
+
+.btn-exit-form {
+    background-color: $white  !important;
+    color: $primaryDarkColor  !important;
+    border: 2px solid $primaryDarkColor  !important;
+    padding: 0.3rem 1.3rem !important;
+    align-items: center;
+    font-family: $opensans-regular;
+    font-size: $font-size-small;
+}
+
+.btn-back-form {
+    background-color: $secondaryDarkColor  !important;
+}
+
+.modal-cancel-icon {
+    cursor: pointer;
+}
+
+.modal-list-scroll {
+    border-top: none;
+    height: 50vh;
+    margin-top: 0;
+}
+
+.material-card {
+    box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.4) !important;
+    border-radius: 0.25rem;
+}
+
+/////////////////////////////////////////////////////////ROOT SCREEN ///////////////////////////////////////////////////////////
+.root-Screen {
+    display: flex;
+    align-items: center;
+}
+
+/////////////////////////////////////////////////////////TITLE MODAL ///////////////////////////////////////////////////////////
+.modal-title {
+    font-family: $opensans-bold;
+    color: $primaryDarkColor;
+    font-size: $font-size-medium;
+    margin: 0 auto;
+}
+
+//////////////////////////////////////////////////////////SESSION MAT TAB/////////////////////////////////////////////////////////
+.mat-tab-group-custom>.mat-tab-header {
+    border-bottom: none !important;
+}
+
+.mat-tab-group-custom.mat-tab-group.mat-primary>.mat-tab-header>.mat-tab-label-container>.mat-tab-list>.mat-ink-bar {
+    width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.25) !important;
+    height: 0.04rem !important;
+    visibility: hidden !important;
+}
+
+.mat-tab-group-custom>.mat-tab-header>.mat-tab-label-container>.mat-tab-list>.mat-tab-labels>.mat-tab-label {
+    border: 3px solid !important;
+    border-top-left-radius: 0.4rem !important;
+    border-top-right-radius: 0.4rem !important;
+    border-color: #bdbdbd !important;
+    margin-left: 1rem !important;
+    background-color: #bdbdbd !important;
+    box-shadow: 0px 0px 15px -1px rgba(0, 0, 0, 0.2), 0px 0px 15px -1px rgba(0, 0, 0, 0.2),
+        0px 0px 3px -1px rgba(0, 0, 0, 0.2) !important;
+    border-bottom: none;
+    margin-top: 0.5rem;
+    opacity: unset !important;
+    min-width: 264px !important;
+}
+
+.mat-tab-body-content {
+    overflow: hidden !important;
+}
+
+.mat-tab-group-custom>.mat-tab-header>.mat-tab-label-container>.mat-tab-list>.mat-tab-labels>.mat-tab-label>.mat-tab-label-content {
+    width: 100%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    transition: all 1s;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 1rem;
+}
+
+.mat-tab-group-custom>.mat-tab-header>.mat-tab-label-container>.mat-tab-list>.mat-tab-labels>.mat-tab-label-active {
+    border-color: $gray200  !important;
+    background-color: $gray200  !important;
+}
+
+//////////////////////////////////////////////////////////SESSIONS FONTS/////////////////////////////////////////////////////////
+
+.gbl-formControlTextAlingCenter {
+    text-align: center;
+    display: block;
+}
+
+.gbl-formControlTextAlingLeft {
+    text-align: left;
+}
+
+.gbl-formControlTextAlingRight {
+    text-align: right;
+}
+
+.gbl-headerTitle {
+    color: $primaryDarkColor;
+    font-size: $font-size-medium;
+    font-family: $opensans-semibold;
+}
+
+.gbl-formControlTitleDefault {
+    font-family: $opensans-bold;
+    font-size: $font-size-medium;
+    color: $black;
+}
+
+.gbl-formControlSubtitleDefault {
+    font-family: $opensans-semibold;
+    font-size: $font-size-small;
+    color: $black;
+}
+
+.gbl-formControlLabelRoute {
+    font-family: $opensans-semibold;
+    color: $black;
+    font-size: $font-size-small;
+}
+
+.gbl-formControlTabLabel {
+    color: $primaryDarkColor;
+    font-family: $opensans-bold;
+    font-size: $font-size-small;
+}
+
+.gbl-formControlFloatLabel {
+    color: $black;
+    font-family: $opensans-bold;
+    font-size: $font-size-small;
+}
+
+.gbl-formControlTitleModal {
+    color: $black;
+    font-family: $opensans-regular;
+    font-size: $font-size-medium;
+}
+
+.gbl-formControlLabelGeneral {
+    font-family: $opensans-semibold;
+    color: $primaryDarkColor;
+    font-size: $font-size-small;
+}
+
+//////////////////////////////////////////////////////////SESSIONS BUTTONS/////////////////////////////////////////////////////////
+.gbl-formControlButtonSave {
+    color: $white;
+    font-family: $opensans-regular;
+    font-size: $font-size-small;
+    background-color: $primaryDarkColor;
+    border-radius: 1rem;
+    border: none;
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.gbl-formControlButtonSecondary {
+    background-color: $secondaryDarkColor;
+    color: $white;
+    font-family: $opensans-regular;
+    font-size: $font-size-small;
+    border-radius: 0.5rem !important;
+    border: none !important;
+    padding: 0.3rem 1.3rem !important;
+    align-items: center;
+}
+
+.gbl-formControlButtonPrimary {
+    background-color: $generalColor;
+    color: $white;
+    font-family: $opensans-regular;
+    font-size: $font-size-small;
+    border-radius: 0.5rem !important;
+    border: none !important;
+    padding: 0.3rem 1.3rem !important;
+    align-items: center;
+}
+
+.gbl-formControlButtonEdit {
+    color: $white;
+    font-family: $opensans-regular;
+    font-size: $font-size-small;
+    background-color: $primaryDarkColor;
+    border-radius: 0.5em;
+    border: none;
+    height: 2.5rem;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.gbl-formControlButtonDisable {
+    background-color: $gray500;
+    color: $white;
+    font-family: $opensans-regular;
+    font-size: $font-size-small;
+    border-radius: 0.5rem !important;
+    border: none !important;
+    padding: 0.3rem 1.3rem !important;
+    align-items: center;
+}
+
+.gbl-formControlButtonCancel {
+    color: $white;
+    font-family: $opensans-regular;
+    font-size: $font-size-small;
+    background-color: $secondaryDarkColor;
+    border-radius: 1rem;
+    border: none;
+    height: 3rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+
+.gbl-formControlButtonAdd {
+    background-color: $generalColor;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border: none;
+    height: 3rem;
+    border-radius: 0.6rem;
+    color: $white;
+    font-family: $opensans-semibold;
+    font-size: $font-size-small;
+    color: $white;
+    width: 100%;
+    align-items: center;
+}
+
+//////////////////////////////////////////////////////////SESSIONS LOADING/////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////STYLE ERROR REQUIRED/////////////////////////////////////////////////////////
+.alert-error-required {
+    font-family: $opensans-semibold;
+    font-size: $font-size-small;
+    color: $red;
+}
+
+.form-control-error {
+    box-shadow: 0 0 18px $red;
+}
+
+//////////////////////////////////////////////////////////STYLE ERROR REQUIRED/////////////////////////////////////////////////////////
+
+hr {
+    border-top: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+.gbl-header-background {
+    background-color: $gray200;
+    padding-top: 0rem;
+}
+
+.gbl-route-background {
+    background-color: $gray300;
+    padding-bottom: 0.5rem;
+}
+
+.mat-radio-button.mat-accent .mat-radio-inner-circle,
+.mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: $primaryDarkColor  !important;
+}
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: $primaryDarkColor  !important;
+}
+
+.mat-checkbox-checked.mat-accent .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+    background-color: $primaryDarkColor  !important;
+}
+
+.mat-checkbox-checked:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element,
+.mat-checkbox:active:not(.mat-checkbox-disabled).mat-accent .mat-ripple-element {
+    background-color: $primaryDarkColor  !important;
+}
+
+//#region searchinput
+.isEmpty-text {
+    font-family: $opensans-bold;
+    font-size: 2.4rem;
+    color: #cdcdcd;
+    margin-top: 2rem;
+    // margin-top: 10vh;
+}
+
+.search-icon {
+    color: $white;
+    background-color: #bdbdbd;
+    position: absolute;
+    right: 1.5rem;
+    top: 0.5rem;
+}
+
+.gbl-card-Header {
+    background-color: $primaryColor;
+    border: 1px solid rgba(43, 43, 43, 0.8);
+    color: $white;
+    font-size: $font-size-small;
+    font-family: $opensans-bold;
+    width: fit-content;
+    padding: 0.5rem;
+    margin-left: 1.5rem;
+    z-index: 100;
+    position: relative;
+}
+
+.add-account-catalog::placeholder {
+    color: #fff;
+}
+
+.mat-accent .mat-pseudo-checkbox-checked {
+    background: #fff !important;
+}
+
+.mat-accent .mat-pseudo-checkbox::after {
+    color: #1f4e78;
+}
+
+.mat-list-text {
+    width: 230px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+//#endregion searchinput
+
+//#region Loading
+/*******************************
+  *Author: Eduardo Salas
+  *Date: 12/08/2019
+  *Description: Styles for loading
+  *
+  *********************************/
+
+.control-section {
+    -webkit-box-shadow: -1px 2px 29px -10px rgba(0, 0, 0, 0.75) !important;
+    -moz-box-shadow: -1px 2px 29px -10px rgba(0, 0, 0, 0.75) !important;
+    box-shadow: -1px 2px 29px -10px rgba(0, 0, 0, 0.75) !important;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+// Opacidad de las filas del e-grid
+.e-grid .e-rowcell:not(.e-editedbatchcell) {
+    opacity: 1 !important;
+}
+
+// .form-control:focus {
+//   border-color: #dadada !important;
+//   outline: 0;
+//   box-shadow: none !important;
+// }
+
+button:focus {
+    outline: 0ch !important;
+    box-shadow: none !important;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+//#endregion Loading
+.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper {
+    max-width: 100%;
+}
+
+.p-l-2 {
+    padding-left: 2rem !important;
+}
+
+.submenu-open {
+    left: 13.5vw !important;
+}
+
+.submenu-close {
+    left: 2.6vw !important;
+}
+
+.submenu {
+    margin-top: -3rem;
+    background: #1f4e78;
+    box-shadow: none;
+    max-width: 25rem !important;
+    position: absolute;
+
+    .header-menu-item {
+        color: #fff;
+        margin-right: 2.2rem;
+
+        .mat-icon {
+            vertical-align: middle;
+            position: absolute;
+            right: 7px;
+            top: 9px;
+            color: #0288d1;
+            margin-right: 0px !important;
+            font-weight: bold;
+        }
+    }
+
+    .division-options {
+        border-bottom: 1px solid #ffffff85;
+    }
+}
+
+.submenu.mat-menu-panel {
+    max-width: 30rem !important;
+}
+
+.hidden-sub-options {
+    display: none;
+}
+
+::ng-deep.e-grid.e-default .e-headercell {
+    font-family: $opensans-semibold  !important;
+    white-space: normal !important;
+}
+
+::ng-deep .e-grid .e-columnheader {
+    color: $primaryDarkColor  !important;
+}
+
+::ng-deep.e-grid .e-frozenheader>.e-table,
+.e-grid .e-frozencontent>.e-table {
+    border-right-color: $primaryDarkColor  !important;
+}
+
+::ng-deep .e-tooltip-wrap.e-griderror,
+.e-control.e-tooltip-wrap.e-popup.e-griderror {
+    bottom: auto !important;
+}
+
+.modal-corporation-modal .mat-list-text {
+    display: inline !important;
+    width: 230px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.mat-pseudo-checkbox {
+    color: unset !important;
+}
+
+.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper {
+    min-height: 100%;
+}
+
+@media (min-width: 1900px) {
+
+    .modal-size-add-purchase-order {
+        min-width: 996px;
+        max-width: 996px;
+        max-height: 800px;
+        min-height: 45.6rem;
+    }
+}

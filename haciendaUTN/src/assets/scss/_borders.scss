@@ -1,0 +1,17 @@
+@use 'variable';
+
+.border-radius-middle {
+    border-radius: 50px !important;
+}
+
+.rounded-circle {
+    border-radius: 50% !important;
+}
+
+.custom-border-bottom {
+    border-bottom: 1px solid variable.$generalColor;
+}
+
+.custom-border-left {
+    border-left: 1px solid variable.$generalColor;
+}

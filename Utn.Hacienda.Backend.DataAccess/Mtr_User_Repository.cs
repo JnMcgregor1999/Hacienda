@@ -122,6 +122,8 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_EMAIL = model.Email,
                         P_PASSWORD = model.Password,
                         P_ACTIVE = model.Active,
+                        P_PUBLIC_KEY = model.Public_Key,
+                        P_IS_UPDATE_PUBLIC_KEY = model.Is_Update_Public_Key
                     },
                     commandType: CommandType.StoredProcedure);
             }
@@ -148,6 +150,8 @@ namespace Utn.Hacienda.Backend.DataAccess.Repository
                         P_EMAIL = model.Email,
                         P_PASSWORD = model.Password,
                         P_ACTIVE = model.Active,
+                        P_PUBLIC_KEY = model.Public_Key,
+                        P_IS_UPDATE_PUBLIC_KEY = model.Is_Update_Public_Key
                     },
                     commandType: CommandType.StoredProcedure).FirstOrDefault();
                 return await Task.FromResult<Common.Mtr_User>(result);

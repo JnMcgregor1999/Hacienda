@@ -1,0 +1,124 @@
+$opensans-bold: "Open Sans Bold";
+$opensans-extrabold: "Open Sans ExtraBold";
+$opensans-regular: "Open Sans Regular";
+$opensans-light: "Open Sans Light";
+$opensans-semibold: "Open Sans SemiBold";
+
+@font-face {
+  font-family: "Open Sans Light";
+  font-style: normal;
+  font-weight: 300;
+  font-display: auto;
+  src: local("Open Sans Light"), local("Open-Sans-Light"), url("/assets/fonts/OpenSans-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Regular";
+  font-style: normal;
+  font-weight: 400;
+  font-display: auto;
+  src: local("Open Sans Regular"), local("Open-Sans-Regular"),
+    url("/assets/fonts/OpenSans-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans SemiBold";
+  font-style: normal;
+  font-weight: 600;
+  font-display: auto;
+  src: local("Open Sans SemiBold"), local("Open-Sans-SemiBold"),
+    url("/assets/fonts/OpenSans-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans Bold";
+  font-style: normal;
+  font-weight: 700;
+  font-display: auto;
+  src: local("Open Sans Bold"), local("Open-Sans-Bold"), url("/assets/fonts/OpenSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Open Sans ExtraBold";
+  font-style: normal;
+  font-weight: 800;
+  font-display: auto;
+  src: local("Open Sans ExtraBold"), local("Open-Sans-ExtraBold"),
+    url("/assets/fonts/OpenSans-ExtraBold.ttf") format("truetype");
+}
+
+
+$font-size-smaller: 0.75rem; //12px
+$font-size-regular: 0.875rem; //14px
+$font-size-small: 1rem; //16px
+$font-size-small-b: 1.15rem; //18.4px
+$font-size-small-v: 1.25rem; //20px
+$font-size-medium-small: 1.0625rem; //17px
+$font-size-medium: 1.5rem; //24px
+$font-size-medium-big: 1.85rem; //24px
+$font-size-big: 2.25rem; //36px
+$font-size-bigger: 3.375rem; //54px
+$font-size-biggest: 5.0625rem; //81px
+$font-size-giant: 7.5625rem; //121px
+
+
+/*******************************************************
+  * Author: Johan McGregor
+  * Creation date: 19/06/2022
+  * Description:  Definition of colors
+*******************************************************/
+
+$primary-blue: #009FE3;
+$light-blue: #62d0ff;
+$dark-blue: #0071b1;
+
+/*Star number 01*/
+
+$primary-pink: #e73571;
+$light-pink: #ff6e9f;
+$dark-pink: #af0046;
+$white: #FFFFFF;
+
+/*end number 01*/
+
+$light-gray: #8B8B8B;
+$color-gray-soft: #5A5A5A;
+$light-gray-softer: #DADADA;
+
+$primaryColor: #2f93eb;
+$primaryLightColor: #73c3ff;
+$primaryDarkColor: #1f4e78; //#203764;
+$secondaryColor: #23d7eb;
+$secondaryLightColor: #72ffff;
+$secondaryDarkColor: #00a5b9;
+$selectionTableColor: #d9d9d969; // #9dd4db;
+$black: #000;
+$black100: #1b1b1b;
+$white: #ffff;
+$gray50: #fafafa;
+$gray75: #dadada;
+$gray100: #f5f5f5;
+$gray200: #eeeeee;
+$gray250: #e5e5e5;
+$gray300: #e0e0e0;
+$gray350: #c4c4c4;
+$gray400: #bdbdbd;
+$gray450: #a1a1a1;
+$gray500: #9e9e9e;
+$gray600: #757575;
+$gray700: #616161;
+$gray800: #424242;
+$gray900: #212121;
+$gray1000: #5a5a5a;
+$red: #b90000;
+$red100: #e02020;
+$redHover: #df2f2f;
+$yellow: #ffc110;
+$darkBlue: #0c539f;
+$darckBlue-tables-title: #203764;
+$generalColor: #1f4e78;
+$generalColorHover: #3072ad;
+$green: #08a300;
+$greenHover: #2a933f;
+$greenDarkColor: #038a1e;
+$greenColor-100: #039b00;
